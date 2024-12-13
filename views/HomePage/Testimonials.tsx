@@ -11,28 +11,28 @@ import { media } from 'utils/media';
 const TESTIMONIALS = [
   {
     companyLogoUrl: '/testimonials/company-logo-1.svg',
-    content: `Really good. I am so pleased with this product. I didn't even need training.`,
+    content: `TIMLEAD a transformé notre gestion des opérations. Le suivi en temps réel de nos techniciens et la centralisation des informations ont considérablement amélioré notre efficacité.`,
     author: {
-      name: 'Clyde Edwards',
-      title: 'Very Serious Man',
+      name: 'Marie Dubois',
+      title: 'Directrice des Opérations',
       avatarUrl: '/testimonials/author-photo-1.jpeg',
     },
   },
   {
     companyLogoUrl: '/testimonials/company-logo-2.svg',
-    content: `It's really wonderful. I use saas product often. Thank You! Saas product has really helped our business.`,
+    content: `L'interface intuitive et la cartographie interactive nous permettent de gérer facilement nos équipes sur le terrain. Un vrai gain de temps et d'efficacité.`,
     author: {
-      name: 'Jimmy Hunter',
-      title: 'Sigma Male University Graduate',
+      name: 'Thomas Martin',
+      title: 'Responsable Technique',
       avatarUrl: '/testimonials/author-photo-2.jpeg',
     },
   },
   {
     companyLogoUrl: '/testimonials/company-logo-3.svg',
-    content: `Since I invested in saas product I made over 100,000 dollars profits. It really saves me time and effort. saas product is exactly what our business has been lacking.`,
+    content: `La gestion des tickets et le suivi des interventions sont devenus beaucoup plus simples. Nos clients sont ravis de la réactivité de nos équipes.`,
     author: {
-      name: 'Marjorie Morgan',
-      title: 'Chief Chad Officer',
+      name: 'Sophie Laurent',
+      title: 'Responsable Service Client',
       avatarUrl: '/testimonials/author-photo-3.jpeg',
     },
   },

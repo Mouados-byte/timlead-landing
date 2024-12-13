@@ -6,7 +6,7 @@ const Input = styled.input`
   border-radius: 0.6rem;
   font-size: 1.6rem;
   padding: 1.8rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   /* color: rgb(var(--textSecondary)); */
 
   &:focus {

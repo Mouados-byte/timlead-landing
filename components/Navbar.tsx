@@ -1,3 +1,4 @@
+"use client"
 import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -132,6 +133,8 @@ const LogoWrapper = styled.a`
   display: flex;
   margin-right: auto;
   text-decoration: none;
+  align-items: center;
+  gap: 1rem;
 
   color: rgb(var(--logoColor));
 `;

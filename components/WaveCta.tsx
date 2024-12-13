@@ -21,14 +21,14 @@ export default function WaveCta() {
       </svg>
       <CtaWrapper>
         <Container>
-          <Title>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</Title>
+          <Title>Transformez votre gestion opérationnelle avec TIMLEAD</Title>
           <CustomButtonGroup>
             <Button onClick={() => setIsModalOpened(true)}>
-              Subscribe to the newsletter <span>&rarr;</span>
+              Demander une démonstration <span>&rarr;</span>
             </Button>
-            <NextLink href="/features" passHref>
+            <NextLink href="/contact" passHref>
               <OutlinedButton transparent>
-                Features <span>&rarr;</span>
+                Nous contacter <span>&rarr;</span>
               </OutlinedButton>
             </NextLink>
           </CustomButtonGroup>

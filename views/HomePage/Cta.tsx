@@ -13,21 +13,21 @@ export default function Cta() {
     <CtaWrapper>
       <Container>
         <Stack>
-          <OverTitle>Lorem ipsum dolor sit amet</OverTitle>
-          <SectionTitle>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus delectus?</SectionTitle>
+          <OverTitle>Prêt à optimiser vos opérations ?</OverTitle>
+          <SectionTitle>Découvrez la puissance de TIMLEAD pour votre entreprise</SectionTitle>
           <Description>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae accusamus deleniti nihil quas tempora numquam, vitae
-            culpa.
+            Rejoignez les entreprises qui ont déjà transformé leur gestion opérationnelle grâce à notre solution 
+            tout-en-un. Centralisez vos processus, optimisez vos interventions et améliorez votre efficacité dès aujourd'hui.
           </Description>
           <ButtonGroup>
-            <NextLink href="#early-access" passHref>
+            <NextLink href="/contact" passHref>
               <Button>
-                Subscribe to the newsletter <span>&rarr;</span>
+                Demander une démo <span>&rarr;</span>
               </Button>
             </NextLink>
-            <NextLink href="#whitepaper" passHref>
+            <NextLink href="/pricing" passHref>
               <OutlinedButton transparent>
-                Features <span>&rarr;</span>
+                Voir les forfaits <span>&rarr;</span>
               </OutlinedButton>
             </NextLink>
           </ButtonGroup>

@@ -10,29 +10,26 @@ import { media } from 'utils/media';
 
 const TABS = [
   {
-    title: 'Find relevant media contacts - multiline title',
-    description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+    title: 'Solution tout-en-un centralisée',
+    description: `<p>TIMLEAD centralise toutes les fonctionnalités essentielles pour la gestion des opérations : gestion de Ticketing, planification des tâches, CRM, inventaire des équipements, etc. Cela permet de simplifier la gestion et d'éviter la multiplication des outils.</p>`,
     imageUrl: '/demo-illustration-3.png',
     baseColor: '249,82,120',
     secondColor: '221,9,57',
   },
   {
-    title: 'Another amazing feature',
-    description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+    title: 'Suivi en temps réel des techniciens',
+    description: `<p>Le Géotracking permet de suivre les techniciens en temps réel, améliorant ainsi la réactivité et l'efficacité des interventions, tout en optimisant les itinéraires et les plannings.</p>`,
     imageUrl: '/demo-illustration-4.png',
     baseColor: '57,148,224',
     secondColor: '99,172,232',
   },
   {
-    title: 'And yet... another truly fascinating feature',
-    description:
-      '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quidem ipsam ratione dicta quis cupiditate consequuntur laborum ducimus iusto velit.</p>',
+    title: 'Gestion de projet intégrée',
+    description: `<p>TIMLEAD inclut des outils pour organiser et suivre les projets, gérer les jalons, valider les tâches et contrôler les SLA, pour une gestion précise et efficace des projets.</p>`,
     imageUrl: '/demo-illustration-5.png',
     baseColor: '88,193,132',
     secondColor: '124,207,158',
-  },
+  }
 ];
 
 export default function FeaturesGallery() {
@@ -76,8 +73,8 @@ export default function FeaturesGallery() {
   return (
     <FeaturesGalleryWrapper>
       <Content>
-        <OverTitle>features</OverTitle>
-        <SectionTitle>What are you signing in for?</SectionTitle>
+        <OverTitle>Fonctionnalités principales</OverTitle>
+        <SectionTitle>Pourquoi TIMLEAD est plus puissant qu'un outil standard ?</SectionTitle>
       </Content>
       <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>

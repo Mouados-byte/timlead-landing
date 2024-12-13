@@ -16,21 +16,26 @@ export default function PricingCard({ title, description, benefits, isOutlined, 
 
   return (
     <Wrapper isOutlined={isOutlined}>
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-      <PriceContainer>
-        <Price>{children}</Price>
+      <Header isOutlined={isOutlined}>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+      </Header>
+      <Content>
+        <PriceContainer>
+          <Price>{children}</Price>
+        </PriceContainer>
         {isAnyBenefitPresent && (
-          <CustomRichText>
-            <ul>
-              {benefits.map((singleBenefit, idx) => (
-                <li key={idx}>{singleBenefit}</li>
-              ))}
-            </ul>
-          </CustomRichText>
+          <BenefitsList>
+            {benefits.map((benefit, idx) => (
+              <BenefitItem key={idx}>
+                <CheckIcon>✓</CheckIcon>
+                {benefit}
+              </BenefitItem>
+            ))}
+          </BenefitsList>
         )}
-      </PriceContainer>
-      <CustomButton>Get started</CustomButton>
+        <CustomButton isOutlined={isOutlined}>Demander une démo</CustomButton>
+      </Content>
     </Wrapper>
   );
 }
@@ -38,61 +43,94 @@ export default function PricingCard({ title, description, benefits, isOutlined, 
 const Wrapper = styled.div<{ isOutlined?: boolean }>`
   display: flex;
   flex-direction: column;
-  padding: 3rem;
   background: rgb(var(--cardBackground));
-  box-shadow: ${(p) => (p.isOutlined ? 'var(--shadow-lg)' : 'var(--shadow-md)')};
-  transform: ${(p) => (p.isOutlined ? 'scale(1.1)' : 'scale(1.0)')};
-  text-align: center;
+  border: 2px solid ${(p) => (p.isOutlined ? 'rgb(var(--primary))' : 'transparent')};
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  height: fit-content;
 
-  & > *:not(:first-child) {
-    margin-top: 1rem;
+  &:hover {
+    transform: translateY(-5px);
   }
 
   ${media('<=desktop')} {
-    box-shadow: var(--shadow-md);
-    transform: none;
     order: ${(p) => (p.isOutlined ? -1 : 0)};
   }
 `;
 
+const Header = styled.div<{ isOutlined?: boolean }>`
+  padding: 3rem;
+  background: ${(p) => (p.isOutlined ? 'rgb(var(--primary))' : 'transparent')};
+  color: ${(p) => (p.isOutlined ? 'rgb(var(--textSecondary))' : 'inherit')};
+  border-radius: 0.8rem 0.8rem 0 0;
+`;
+
+const Content = styled.div`
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+`;
+
 const Title = styled.h3`
-  font-size: 4rem;
+  font-size: 2.8rem;
+  font-weight: 600;
   text-transform: capitalize;
+  margin-bottom: 1rem;
 `;
 
 const Description = styled.p`
-  font-size: 2.5rem;
+  font-size: 1.8rem;
+  opacity: 0.8;
 `;
 
 const PriceContainer = styled.div`
-  margin: auto;
-
-  & > *:not(:first-child) {
-    margin-top: 2rem;
-  }
+  text-align: center;
 `;
 
 const Price = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  font-size: 4rem;
-  line-height: 1;
-  font-weight: bold;
-
+  align-items: baseline;
+  font-size: 3rem;
+  font-weight: 600;
+  
   span {
-    font-size: 2rem;
-    font-weight: normal;
+    font-size: 1.8rem;
+    margin-left: 0.5rem;
+    opacity: 0.8;
   }
 `;
 
-const CustomRichText = styled(RichText)`
-  li {
-    margin: auto;
-    width: fit-content;
-  }
+const BenefitsList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 `;
 
-const CustomButton = styled(Button)`
+const BenefitItem = styled.li`
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  gap: 1rem;
+`;
+
+const CheckIcon = styled.span`
+  color: rgb(var(--primary));
+  font-weight: bold;
+`;
+
+const CustomButton = styled(Button)<{ isOutlined?: boolean }>`
   width: 100%;
+  margin-top: auto;
+  background: ${(p) => (p.isOutlined ? 'rgb(var(--primary))' : 'transparent')};
+  border: 2px solid ${(p) => (p.isOutlined ? 'transparent' : 'rgb(var(--primary))')};
+  color: ${(p) => (p.isOutlined ? 'rgb(var(--textSecondary))' : 'rgb(var(--primary))')};
+
+  &:hover {
+    background: ${(p) => (p.isOutlined ? 'rgb(var(--primary))' : 'rgba(var(--primary), 0.1)')};
+  }
 `;

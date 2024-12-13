@@ -7,37 +7,47 @@ import SectionTitle from 'components/SectionTitle';
 export default function PricingTablesSection() {
   return (
     <Wrapper>
-      <SectionTitle>Flexible pricing for agile teams</SectionTitle>
+      <SectionTitle>Forfaits d'abonnement mensuel</SectionTitle>
       <AutofitGrid>
         <PricingCard
-          title="free"
-          description="Give us a try for free"
-          benefits={['1 seat', '1 active project', 'Ulimited viewers', '10 blocks']}
-        >
-          $0<span>/month</span>
-        </PricingCard>
-        <PricingCard
-          title="Starter"
-          description="Best for individual desginers"
-          benefits={['1 seat', '3 active project', 'Ulimited viewers', '100 blocks', 'CSV Downloader', 'Password protection']}
-          isOutlined
-        >
-          $29<span>/month</span>
-        </PricingCard>
-        <PricingCard
-          title="Premium"
-          description="Get your team together"
+          title="Standard"
+          description="Pour les petites équipes"
           benefits={[
-            '10 seat',
-            '10 active project',
-            'Ulimited viewers',
-            'Unlimited blocks',
-            'CSV Downloader',
-            'Password protection',
-            'Customization',
+            'Gestion de ticketing',
+            'Géotracking basique',
+            'Application mobile',
+            'Chat instantané',
+            'Support par email'
           ]}
         >
-          $79<span>/month</span>
+          Contactez-nous
+        </PricingCard>
+        <PricingCard
+          title="Professional"
+          description="Pour les équipes en croissance"
+          benefits={[
+            'Toutes les fonctionnalités Standard',
+            'Cartographie interactive avancée',
+            'Gestion de projet complète',
+            'CRM client intégré',
+            'Support prioritaire'
+          ]}
+          isOutlined
+        >
+          Contactez-nous
+        </PricingCard>
+        <PricingCard
+          title="Enterprise"
+          description="Pour les grandes organisations"
+          benefits={[
+            'Toutes les fonctionnalités',
+            'Personnalisation avancée',
+            'Account manager dédié',
+            'SLA garantis',
+            'Formation sur mesure'
+          ]}
+        >
+          Sur devis
         </PricingCard>
       </AutofitGrid>
     </Wrapper>

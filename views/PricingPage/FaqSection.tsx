@@ -5,34 +5,42 @@ import SectionTitle from 'components/SectionTitle';
 export default function FaqSection() {
   return (
     <Wrapper>
-      <SectionTitle>Frequently asked question</SectionTitle>
-      <Accordion title="Eiusmod eu laboris qui minim incididunt et id in elit veniam Lorem nulla ullamco.">
-        Voluptate ad aliquip in adipisicing incididunt officia. Aliqua consectetur id commodo fugiat sunt dolor minim. Aliqua ut deserunt
-        sit irure tempor esse labore elit commodo pariatur in nisi minim culpa. Exercitation eu in mollit tempor cillum excepteur
-        adipisicing cillum do et dolor est deserunt dolor. Deserunt reprehenderit nulla commodo quis et consectetur deserunt ea eiusmod
-        reprehenderit aliqua. Cupidatat commodo do ad ullamco ad enim sint sint irure amet culpa. Consequat sit Lorem sint culpa.
+      <SectionTitle>Questions fréquentes</SectionTitle>
+      <Accordion title="Qu'est-ce qui différencie TIMLEAD des autres solutions de gestion opérationnelle ?">
+        TIMLEAD se distingue par son approche tout-en-un qui combine gestion de ticketing, géotracking, 
+        planification et CRM dans une seule plateforme. Notre solution est spécialement conçue pour 
+        optimiser la gestion des équipes terrain, avec une interface intuitive et une application 
+        mobile performante. Contrairement aux solutions traditionnelles, TIMLEAD offre une vision 
+        complète et centralisée de vos opérations.
       </Accordion>
-      <Accordion title="Minim eiusmod aliquip in ea mollit fugiat ullamco veniam enim sint exercitation.">
-        Lorem laboris ullamco labore consectetur duis amet excepteur esse labore sunt pariatur do aliqua amet. Enim exercitation labore
-        nostrud consectetur veniam eiusmod pariatur do commodo dolore pariatur amet veniam. Irure do et ut dolor quis reprehenderit anim
-        aute sint deserunt tempor sunt nostrud. Deserunt et aute non dolor.
+
+      <Accordion title="Comment TIMLEAD peut-il améliorer l'efficacité de nos équipes terrain ?">
+        TIMLEAD permet un suivi en temps réel des techniciens via le géotracking, optimise les 
+        itinéraires et facilite la communication instantanée. Les techniciens peuvent accéder à 
+        toutes les informations nécessaires via l'application mobile, partager des photos et 
+        documents, et mettre à jour leur statut d'intervention en temps réel. Cela permet une 
+        meilleure coordination et une réduction significative des temps d'intervention.
       </Accordion>
-      <Accordion title="Commodo officia dolore anim occaecat.">
-        Enim ea cillum pariatur incididunt incididunt sunt ea exercitation nisi aliquip. Cillum deserunt ut esse Lorem non qui labore labore
-        eiusmod magna incididunt ut quis. Nulla excepteur adipisicing ipsum do non occaecat.
+
+      <Accordion title="Quelle est la durée moyenne de déploiement de TIMLEAD ?">
+        Le déploiement de TIMLEAD est rapide et peut être réalisé en quelques semaines selon la 
+        taille de votre organisation. Notre équipe vous accompagne à chaque étape : configuration 
+        initiale, formation des utilisateurs, et support continu. La plateforme est conçue pour 
+        être intuitive, permettant une prise en main rapide par vos équipes.
       </Accordion>
-      <Accordion title="Irure Lorem proident esse enim.">
-        Ipsum laboris sit minim occaecat nisi qui. Tempor eiusmod fugiat occaecat labore. Exercitation do cillum cillum laborum velit
-        laborum ea magna duis laborum in anim. Enim laboris dolore laboris consectetur enim duis deserunt consequat excepteur ipsum
-        excepteur. Non dolor magna et est cillum sint eiusmod sit eiusmod veniam id. Aliqua non non labore amet laborum fugiat ad nostrud ex
-        officia exercitation.
+
+      <Accordion title="Comment TIMLEAD gère-t-il la sécurité des données ?">
+        La sécurité des données est une priorité pour TIMLEAD. Notre plateforme utilise des 
+        protocoles de cryptage avancés, des sauvegardes régulières, et respecte les normes de 
+        sécurité les plus strictes. Toutes les données sont hébergées sur des serveurs sécurisés, 
+        et nous assurons une conformité totale avec les réglementations en vigueur, notamment le RGPD.
       </Accordion>
-      <Accordion title="Ea quis consequat sunt sint aute pariatur aliquip minim voluptate.">
-        Sint eiusmod aute nulla ut esse sunt fugiat nulla exercitation duis pariatur. Magna anim incididunt magna id quis irure laborum sint
-        voluptate tempor esse elit dolore. Elit exercitation pariatur adipisicing aute. Nisi deserunt enim consequat anim adipisicing
-        laborum sint occaecat elit. Consequat officia cupidatat magna incididunt nisi in sunt duis reprehenderit ullamco in amet cillum.
-        Dolor nisi proident ipsum aute velit aliquip magna fugiat reprehenderit. Enim ex aliqua et velit exercitation reprehenderit veniam
-        do eu exercitation ad duis.
+
+      <Accordion title="Quels types de support et d'accompagnement proposez-vous ?">
+        Nous offrons plusieurs niveaux de support selon vos besoins : support technique par email 
+        et téléphone, documentation complète, formations personnalisées, et pour les entreprises, 
+        un accompagnement dédié avec un account manager. Notre équipe est disponible pour vous 
+        aider à optimiser l'utilisation de TIMLEAD et répondre à vos questions.
       </Accordion>
     </Wrapper>
   );

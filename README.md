@@ -1,10 +1,10 @@
 <br/>
 <p align="center">
 
-  <a href="https://github.com/Blazity/next-saas-starter" >
+  <a href="https://github.com/Blazity/tim-lead" >
     <img src="https://i.imgur.com/jmc2Q1w.png" alt="Logo"  width="49%">
   </a>
-   <a href="https://github.com/Blazity/next-saas-starter">
+   <a href="https://github.com/Blazity/tim-lead">
     <img src="https://i.imgur.com/CxkjHhi.png" alt="Logo" width="49%">
   </a> 
 
@@ -14,17 +14,17 @@
     Everything you need to build a great landing page / marketing website for your startup. Great SEO metrics, Green WebVitals, 🚀 Performance, Clean & Pragmatic Codebase out of the box.
     <br/>
     <br/>
-    <a href="https://next-saas-starter-ashy.vercel.app/">View Demo</a>
+    <a href="https://tim-lead-ashy.vercel.app/">View Demo</a>
     .
-    <a href="https://github.com/Blazity/next-saas-starter/issues">Report Bug</a>
+    <a href="https://github.com/Blazity/tim-lead/issues">Report Bug</a>
     .
-    <a href="https://github.com/Blazity/next-saas-starter/issues">Request Feature</a>
+    <a href="https://github.com/Blazity/tim-lead/issues">Request Feature</a>
   </p>
 </p>
 
 <div align="center">
 
-![Contributors](https://img.shields.io/github/contributors/Blazity/next-saas-starter?color=dark-green) ![Issues](https://img.shields.io/github/issues/Blazity/next-saas-starter) ![License](https://img.shields.io/github/license/Blazity/next-saas-starter)
+![Contributors](https://img.shields.io/github/contributors/Blazity/tim-lead?color=dark-green) ![Issues](https://img.shields.io/github/issues/Blazity/tim-lead) ![License](https://img.shields.io/github/license/Blazity/tim-lead)
 
 </div>
 
@@ -65,7 +65,7 @@
 
 ## 🤓 Getting Started
 
-- Click `Use the template` or [this link](https://github.com/Blazity/next-saas-starter/generate)
+- Click `Use the template` or [this link](https://github.com/Blazity/tim-lead/generate)
 - Setup your [sendgrid](https://sendgrid.com/) API key and add it to environment variables (`SENDGRID_API_KEY` - `.env.local`)
 - Adjust the template to your needs (and checkout `env.ts` file)
 - Deploy the project on [Vercel](https://vercel.com/) **don't forget to add env variables**
@@ -90,11 +90,11 @@ yarn build
 
 Clone the repository and one-click deploy to Vercel for free!
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-saas-starter)
+[![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/tim-lead)
 
 Clone the repository and one-click deploy to Netlify for free!
 
-[![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Blazity/next-saas-starter)
+[![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Blazity/tim-lead)
 
 ## 🧰 Built With
 
@@ -107,7 +107,7 @@ Clone the repository and one-click deploy to Netlify for free!
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-- If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/Blazity/next-saas-starter/issues/new) to discuss it, or directly create a pull request after you edit the _README.md_ file with necessary changes.
+- If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/Blazity/tim-lead/issues/new) to discuss it, or directly create a pull request after you edit the _README.md_ file with necessary changes.
 - Create individual PR for each suggestion.
 
 ### Creating A Pull Request
@@ -139,10 +139,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://bstefanski.com/"><img src="https://avatars.githubusercontent.com/u/28964599?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Bart Stefanski</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=bmstefanski" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/ilasota"><img src="https://avatars.githubusercontent.com/u/34578189?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Igor Lasota</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=ilasota" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/jbryn"><img src="https://avatars.githubusercontent.com/u/52970664?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Jan Bryński</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=jbryn" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.logana.dev/"><img src="https://avatars.githubusercontent.com/u/43075109?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Logan Anderson</b></sub></a><br /><a href="https://github.com/Blazity/next-saas-starter/commits?author=logan-anderson" title="Code">💻</a> <a href="https://github.com/Blazity/next-saas-starter/commits?author=logan-anderson" title="Documentation">📖</a> <a href="#mentoring-logan-anderson" title="Mentoring">🧑‍🏫</a></td>
+    <td align="center"><a href="https://bstefanski.com/"><img src="https://avatars.githubusercontent.com/u/28964599?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Bart Stefanski</b></sub></a><br /><a href="https://github.com/Blazity/tim-lead/commits?author=bmstefanski" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ilasota"><img src="https://avatars.githubusercontent.com/u/34578189?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Igor Lasota</b></sub></a><br /><a href="https://github.com/Blazity/tim-lead/commits?author=ilasota" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jbryn"><img src="https://avatars.githubusercontent.com/u/52970664?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Jan Bryński</b></sub></a><br /><a href="https://github.com/Blazity/tim-lead/commits?author=jbryn" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.logana.dev/"><img src="https://avatars.githubusercontent.com/u/43075109?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Logan Anderson</b></sub></a><br /><a href="https://github.com/Blazity/tim-lead/commits?author=logan-anderson" title="Code">💻</a> <a href="https://github.com/Blazity/tim-lead/commits?author=logan-anderson" title="Documentation">📖</a> <a href="#mentoring-logan-anderson" title="Mentoring">🧑‍🏫</a></td>
   </tr>
 </table>
 
@@ -155,4 +155,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## 📝 License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/Blazity/next-saas-starter/blob/main/LICENSE.md) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/Blazity/tim-lead/blob/main/LICENSE.md) for more information.

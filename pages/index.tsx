@@ -2,7 +2,6 @@ import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 import BasicSection from 'components/BasicSection';
-import Link from 'components/Link';
 import { EnvVars } from 'env';
 import { getAllPosts } from 'utils/postsFetcher';
 import Cta from 'views/HomePage/Cta';
@@ -20,31 +19,44 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
         <title>{EnvVars.SITE_NAME}</title>
         <meta
           name="description"
-          content="Tempor nostrud velit fugiat nostrud duis incididunt Lorem deserunt est tempor aute dolor ad elit."
+          content="TIMLEAD est une plateforme tout-en-un dédiée à la gestion des opérations, permettant de centraliser et d'optimiser vos processus pour une meilleure efficacité."
         />
       </Head>
       <HomepageWrapper>
         <WhiteBackgroundContainer>
           <Hero />
           <Partners />
-          <BasicSection imageUrl="/demo-illustration-1.svg" title="Lorem ipsum dolor sit amet consectetur." overTitle="sit amet gogo">
+          <BasicSection 
+            imageUrl="/demo-illustration-1.svg" 
+            title="Une solution complète pour votre gestion opérationnelle" 
+            overTitle="Pourquoi TIMLEAD ?"
+          >
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore
-              voluptate quo deleniti animi laboriosam.{' '}
-              <Link href="/help-center">Possimus ullam velit rem itaque consectetur, in distinctio?</Link> Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Soluta repellendus quia quos obcaecati nihil. Laudantium non accusantium, voluptate eum nesciunt
-              at suscipit quis est soluta?
-            </p>
-          </BasicSection>
-          <BasicSection imageUrl="/demo-illustration-2.svg" title="Lorem ipsum dolor sit." overTitle="lorem ipsum" reversed>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, quidem error incidunt a doloremque voluptatem porro inventore{' '}
-              <strong>voluptate quo deleniti animi laboriosam</strong>. Possimus ullam velit rem itaque consectetur, in distinctio?
+              TIMLEAD centralise toutes les fonctionnalités essentielles pour la gestion des opérations : 
+              gestion de Ticketing, planification des tâches, CRM, inventaire des équipements, etc. 
+              Notre plateforme permet de simplifier la gestion et d'éviter la multiplication des outils.
             </p>
             <ul>
-              <li>Professional point 1</li>
-              <li>Professional remark 2</li>
-              <li>Professional feature 3</li>
+              <li>Interface intuitive et personnalisable</li>
+              <li>Suivi en temps réel des techniciens</li>
+              <li>Solution centralisée tout-en-un</li>
+            </ul>
+          </BasicSection>
+          <BasicSection 
+            imageUrl="/demo-illustration-2.svg" 
+            title="Application mobile performante pour vos équipes terrain" 
+            overTitle="Mobilité" 
+            reversed
+          >
+            <p>
+              Donnez à vos équipes terrain accès à toutes les informations via une application mobile intuitive. 
+              Communiquez en temps réel, partagez des photos, documents et vidéos depuis le terrain pour une 
+              meilleure coordination et efficacité opérationnelle.
+            </p>
+            <ul>
+              <li>Communication en temps réel</li>
+              <li>Partage de documents et photos</li>
+              <li>Suivi des interventions mobile</li>
             </ul>
           </BasicSection>
         </WhiteBackgroundContainer>
@@ -53,7 +65,6 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           <FeaturesGallery />
           <Features />
           <Testimonials />
-          <ScrollableBlogPosts posts={posts} />
         </DarkerBackgroundContainer>
       </HomepageWrapper>
     </>
