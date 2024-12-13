@@ -9,7 +9,6 @@ import Features from 'views/HomePage/Features';
 import FeaturesGallery from 'views/HomePage/FeaturesGallery';
 import Hero from 'views/HomePage/Hero';
 import Partners from 'views/HomePage/Partners';
-import ScrollableBlogPosts from 'views/HomePage/ScrollableBlogPosts';
 import Testimonials from 'views/HomePage/Testimonials';
 
 export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -34,7 +33,7 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
             <p>
               TIMLEAD centralise toutes les fonctionnalités essentielles pour la gestion des opérations : 
               gestion de Ticketing, planification des tâches, CRM, inventaire des équipements, etc. 
-              Notre plateforme permet de simplifier la gestion et d'éviter la multiplication des outils.
+              Notre plateforme permet de simplifier la gestion et d`éviter la multiplication des outils.
             </p>
             <ul>
               <li>Interface intuitive et personnalisable</li>
