@@ -23,14 +23,9 @@ export default function WaveCta() {
         <Container>
           <Title>Transformez votre gestion opérationnelle avec TIMLEAD</Title>
           <CustomButtonGroup>
-            <Button onClick={() => setIsModalOpened(true)}>
-              Demander une démonstration <span>&rarr;</span>
+            <Button className='text-lg' href='/contact'>
+              Demander une démonstration
             </Button>
-            <NextLink href="/contact" passHref>
-              <OutlinedButton transparent>
-                Nous contacter <span>&rarr;</span>
-              </OutlinedButton>
-            </NextLink>
           </CustomButtonGroup>
         </Container>
       </CtaWrapper>

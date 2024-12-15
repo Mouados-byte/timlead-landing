@@ -96,10 +96,6 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
     setIsModalOpened(true);
   }
 
-  if (outlined) {
-    return <CustomButton onClick={showNewsletterModal}>{title}</CustomButton>;
-  }
-
   return (
     <NavItemWrapper outlined={outlined}>
       <NextLink href={href} passHref>

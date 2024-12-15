@@ -50,11 +50,6 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <Container>
-        <ListContainer>
-          {footerItems.map((singleItem) => (
-            <FooterList key={singleItem.title} {...singleItem} />
-          ))}
-        </ListContainer>
         <BottomBar>
           <ShareBar>
             <NextLink href="https://www.twitter.com/timlead" passHref>
@@ -104,7 +99,6 @@ function ListItem({ title, href }: SingleFooterListItem) {
 }
 
 const FooterWrapper = styled.div`
-  padding-top: 10rem;
   padding-bottom: 4rem;
   background: rgb(var(--secondary));
   color: rgb(var(--textSecondary));
@@ -165,7 +159,6 @@ const Copyright = styled.p`
 `;
 
 const BottomBar = styled.div`
-  margin-top: 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -24,7 +24,6 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
       <HomepageWrapper>
         <WhiteBackgroundContainer>
           <Hero />
-          <Partners />
           <BasicSection 
             imageUrl="/demo-illustration-1.svg" 
             title="Une solution complète pour votre gestion opérationnelle" 
