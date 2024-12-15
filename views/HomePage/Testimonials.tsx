@@ -10,12 +10,21 @@ import { media } from 'utils/media';
 
 const TESTIMONIALS = [
   {
+    companyLogoUrl: '/testimonials/netis_logo.png',
+    content: `La gestion des tickets et le suivi des interventions sont devenus beaucoup plus simples. Nos clients sont ravis de la réactivité de nos équipes.`,
+    author: {
+      name: 'Joubair Tarik',
+      title: 'Responsable Technique',
+      avatarUrl: '/testimonials/author-photo-1.jpeg',
+    },
+  },
+  {
     companyLogoUrl: '/testimonials/company-logo-1.svg',
     content: `TIMLEAD a transformé notre gestion des opérations. Le suivi en temps réel de nos techniciens et la centralisation des informations ont considérablement amélioré notre efficacité.`,
     author: {
       name: 'Marie Dubois',
       title: 'Directrice des Opérations',
-      avatarUrl: '/testimonials/author-photo-1.jpeg',
+      avatarUrl: '/testimonials/author-photo-3.jpeg',
     },
   },
   {
@@ -25,15 +34,6 @@ const TESTIMONIALS = [
       name: 'Thomas Martin',
       title: 'Responsable Technique',
       avatarUrl: '/testimonials/author-photo-2.jpeg',
-    },
-  },
-  {
-    companyLogoUrl: '/testimonials/company-logo-3.svg',
-    content: `La gestion des tickets et le suivi des interventions sont devenus beaucoup plus simples. Nos clients sont ravis de la réactivité de nos équipes.`,
-    author: {
-      name: 'Sophie Laurent',
-      title: 'Responsable Service Client',
-      avatarUrl: '/testimonials/author-photo-3.jpeg',
     },
   },
 ];
@@ -51,7 +51,7 @@ export default function Testimonials() {
                   src={singleTestimonial.companyLogoUrl}
                   alt={`${singleTestimonial.author.name}'s company logo`}
                   width={200}
-                  height={40}
+                  height={200}
                 />
                 <Content>“{singleTestimonial.content}”</Content>
                 <AuthorContainer>
