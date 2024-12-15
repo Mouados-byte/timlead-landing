@@ -58,7 +58,7 @@ export default function FeaturesPage() {
         <HeaderSection>
           <Title>Nos Fonctionnalités</Title>
           <Description>
-            TIMLEAD offre une suite complète d'outils pour optimiser vos opérations terrain. 
+            TIMLEAD offre une suite complète d`outils pour optimiser vos opérations terrain. 
             Découvrez comment chaque fonctionnalité peut transformer votre gestion quotidienne.
           </Description>
         </HeaderSection>
