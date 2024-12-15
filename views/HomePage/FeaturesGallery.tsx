@@ -76,10 +76,10 @@ export default function FeaturesGallery() {
         <OverTitle>Fonctionnalités principales</OverTitle>
         <SectionTitle>Pourquoi TIMLEAD est plus puissant qu'un outil standard ?</SectionTitle>
       </Content>
-      <GalleryWrapper>
+      {/* <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>
         {imagesMarkup}
-      </GalleryWrapper>
+      </GalleryWrapper> */}
     </FeaturesGalleryWrapper>
   );
 }

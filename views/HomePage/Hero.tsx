@@ -12,8 +12,8 @@ export default function Hero() {
     <HeroWrapper>
       <Contents>
         <TextContent>
-          <CustomOverTitle>Solution tout-en-un de gestion d'opérations</CustomOverTitle>
           <Heading>Optimisez votre gestion d'opérations avec TIMLEAD</Heading>
+          <CustomOverTitle>Solution tout-en-un de gestion d'opérations</CustomOverTitle>
           <Description>
             TIMLEAD est une plateforme tout-en-un dédiée à la gestion des opérations, permettant de 
             centraliser et d'optimiser vos processus pour une meilleure efficacité, réactivité et suivi en 
@@ -60,7 +60,8 @@ const CustomButtonGroup = styled(ButtonGroup)`
   margin-top: 4rem;
 `;
 
-const TextContent = styled.div``;
+const TextContent = styled.div`
+margin-top: 2.5rem`;
 
 const DesktopImageContainer = styled.div`
   display: flex;
@@ -105,10 +106,10 @@ const CustomOverTitle = styled(OverTitle)`
 `;
 
 const Heading = styled.h1`
-  font-size: 7.2rem;
+  font-size: 4rem;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   letter-spacing: -0.03em;
 
   ${media('<=tablet')} {

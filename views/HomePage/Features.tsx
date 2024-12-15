@@ -1,9 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
-import AutofitGrid from 'components/AutofitGrid';
+import Slider from 'react-slick';
 import BasicCard from 'components/BasicCard';
 import Container from 'components/Container';
 import { media } from 'utils/media';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+function SamplePrevArrow(props: any) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: 'block', left: '6px', zIndex: 2 }}
+      onClick={onClick}
+    >
+      <svg width="30" height="30" viewBox="0 0 20 20" fill="none">
+        <path d="M15 6l-6 6 6 6" stroke="#888" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </div>
+  );
+}
+
+function SampleNextArrow(props: any) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: 'block', right: '6px', zIndex: 2 }}
+      onClick={onClick}
+    >
+      <svg width="30" height="30" viewBox="0 0 20 20" fill="none">
+        <path d="M9 18l6-6-6-6" stroke="#888" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </div>
+  );
+}
+
 
 const FEATURES = [
   {
@@ -33,31 +66,78 @@ const FEATURES = [
   },
   {
     imageUrl: '/grid-icons/asset-6.svg',
-    title: 'Communication instantanée',
+    title: 'Chat en temps réel',
     description: 'Chat en temps réel avec les techniciens, partage de photos, documents et vidéos depuis le terrain.',
+  },
+  {
+    imageUrl: '/grid-icons/asset-7.svg',
+    title: 'Application mobile performante',
+    description: 'Donnez à vos équipes terrain accès à toutes les informations via une application mobile intuitive.',
   }
 ];
 
 export default function Features() {
+  const settings = {
+    arrows: true,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    swipe: true,
+    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  };
+
   return (
     <Container>
-      <CustomAutofitGrid>
-        {FEATURES.map((singleFeature, idx) => (
-          <BasicCard key={singleFeature.title} {...singleFeature} />
-        ))}
-      </CustomAutofitGrid>
+      <CarouselWrapper>
+        <Slider {...settings}>
+          {FEATURES.map((singleFeature, idx) => (
+            <CardWrapper key={singleFeature.title}>
+              <BasicCard {...singleFeature} />
+            </CardWrapper>
+          ))}
+        </Slider>
+      </CarouselWrapper>
     </Container>
   );
 }
 
-const CustomAutofitGrid = styled(AutofitGrid)`
-  --autofit-grid-item-size: 40rem;
-
-  ${media('<=tablet')} {
-    --autofit-grid-item-size: 30rem;
+const CarouselWrapper = styled.div`
+  margin: 2rem 0;
+  
+  .slick-slide {
+    padding: 0 1rem;
   }
 
-  ${media('<=phone')} {
-    --autofit-grid-item-size: 100%;
+  .slick-dots {
+    bottom: -40px;
   }
+
+  .slick-prev, .slick-next {
+    &:before {
+      color: var(--primary);
+    }
+  }
+`;
+
+const CardWrapper = styled.div`
+  padding: 0.5rem;
 `;

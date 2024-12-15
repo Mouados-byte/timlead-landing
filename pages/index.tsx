@@ -40,23 +40,6 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
               <li>Solution centralisée tout-en-un</li>
             </ul>
           </BasicSection>
-          <BasicSection 
-            imageUrl="/demo-illustration-2.svg" 
-            title="Application mobile performante pour vos équipes terrain" 
-            overTitle="Mobilité" 
-            reversed
-          >
-            <p>
-              Donnez à vos équipes terrain accès à toutes les informations via une application mobile intuitive. 
-              Communiquez en temps réel, partagez des photos, documents et vidéos depuis le terrain pour une 
-              meilleure coordination et efficacité opérationnelle.
-            </p>
-            <ul>
-              <li>Communication en temps réel</li>
-              <li>Partage de documents et photos</li>
-              <li>Suivi des interventions mobile</li>
-            </ul>
-          </BasicSection>
         </WhiteBackgroundContainer>
         <DarkerBackgroundContainer>
           <Cta />
@@ -79,7 +62,7 @@ const DarkerBackgroundContainer = styled.div`
   background: rgb(var(--background));
 
   & > *:not(:first-child) {
-    margin-top: 15rem;
+    margin-top: 8rem;
   }
 `;
 
@@ -91,7 +74,7 @@ const WhiteBackgroundContainer = styled.div`
   }
 
   & > *:not(:first-child) {
-    margin-top: 15rem;
+    margin-top: 8rem;
   }
 `;
 

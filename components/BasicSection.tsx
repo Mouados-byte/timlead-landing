@@ -20,8 +20,8 @@ export default function BasicSection({ imageUrl, title, overTitle, reversed, chi
         <NextImage src={imageUrl} alt={title} layout="fill" objectFit="cover" />
       </ImageContainer>
       <ContentContainer>
-        <CustomOverTitle>{overTitle}</CustomOverTitle>
         <Title>{title}</Title>
+        <CustomOverTitle>{overTitle}</CustomOverTitle>
         <RichText>{children}</RichText>
       </ContentContainer>
     </BasicSectionWrapper>
@@ -29,10 +29,10 @@ export default function BasicSection({ imageUrl, title, overTitle, reversed, chi
 }
 
 const Title = styled.h1`
-  font-size: 5.2rem;
+  font-size: 4rem;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   letter-spacing: -0.03em;
 
   ${media('<=tablet')} {

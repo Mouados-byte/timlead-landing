@@ -14,12 +14,12 @@ import Navbar from 'components/Navbar';
 import NavigationDrawer from 'components/NavigationDrawer';
 import NewsletterModal from 'components/NewsletterModal';
 import WaveCta from 'components/WaveCta';
-import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
   { title: 'Accueil', href: '/' },
   { title: 'Tarifs', href: '/pricing' },
+  { title: 'Fonctionnalités', href: '/features' },
   { title: "S'inscrire", href: '/contact' },
   { title: "Se connecter", href: 'https://timlead.com', outlined: true },
 ];
@@ -68,7 +68,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyle />
 
       <Providers>
-        <Modals />
         <Navbar items={navItems} />
         <Component {...pageProps} />
         <WaveCta />
@@ -80,18 +79,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 function Providers<T>({ children }: PropsWithChildren<T>) {
   return (
-    <NewsletterModalContextProvider>
-      <NavigationDrawer items={navItems}>{children}</NavigationDrawer>
-    </NewsletterModalContextProvider>
+    <NavigationDrawer items={navItems}>{children}</NavigationDrawer>
   );
-}
-
-function Modals() {
-  const { isModalOpened, setIsModalOpened } = useNewsletterModalContext();
-  if (!isModalOpened) {
-    return null;
-  }
-  return <NewsletterModal onClose={() => setIsModalOpened(false)} />;
 }
 
 export default MyApp;
