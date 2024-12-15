@@ -1,4 +1,3 @@
-import NextLink from 'next/link';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
@@ -22,14 +21,9 @@ export default function Hero() {
           temps réel.
         </Description>
         <CustomButtonGroup>
-          <Button onClick={() => setIsModalOpened(true)}>
-            Commencer maintenant <span>&rarr;</span>
+          <Button href="/contact">
+            Commencer maintenant
           </Button>
-          <NextLink href="#features" passHref>
-            <Button transparent>
-              Découvrir les fonctionnalités <span>&rarr;</span>
-            </Button>
-          </NextLink>
         </CustomButtonGroup>
       </Contents>
       <ImageContainer>
