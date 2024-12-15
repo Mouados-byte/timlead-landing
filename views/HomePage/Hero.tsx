@@ -4,31 +4,34 @@ import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
 import HeroIllustration from 'components/HeroIllustation';
 import OverTitle from 'components/OverTitle';
-import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
 
 export default function Hero() {
-  const { setIsModalOpened } = useNewsletterModalContext();
 
   return (
     <HeroWrapper>
       <Contents>
-        <CustomOverTitle>Solution tout-en-un de gestion d'opérations</CustomOverTitle>
-        <Heading>Optimisez votre gestion d'opérations avec TIMLEAD</Heading>
-        <Description>
-          TIMLEAD est une plateforme tout-en-un dédiée à la gestion des opérations, permettant de 
-          centraliser et d'optimiser vos processus pour une meilleure efficacité, réactivité et suivi en 
-          temps réel.
-        </Description>
+        <TextContent>
+          <CustomOverTitle>Solution tout-en-un de gestion d'opérations</CustomOverTitle>
+          <Heading>Optimisez votre gestion d'opérations avec TIMLEAD</Heading>
+          <Description>
+            TIMLEAD est une plateforme tout-en-un dédiée à la gestion des opérations, permettant de 
+            centraliser et d'optimiser vos processus pour une meilleure efficacité, réactivité et suivi en 
+            temps réel.
+          </Description>
+        </TextContent>
+        <MobileImageContainer>
+          <HeroIllustration />
+        </MobileImageContainer>
         <CustomButtonGroup>
           <Button href="/contact">
             Commencer maintenant
           </Button>
         </CustomButtonGroup>
       </Contents>
-      <ImageContainer>
+      <DesktopImageContainer>
         <HeroIllustration />
-      </ImageContainer>
+      </DesktopImageContainer>
     </HeroWrapper>
   );
 }
@@ -57,7 +60,9 @@ const CustomButtonGroup = styled(ButtonGroup)`
   margin-top: 4rem;
 `;
 
-const ImageContainer = styled.div`
+const TextContent = styled.div``;
+
+const DesktopImageContainer = styled.div`
   display: flex;
   flex: 1;
   justify-content: flex-end;
@@ -68,8 +73,17 @@ const ImageContainer = styled.div`
   }
 
   ${media('<=desktop')} {
-    margin-top: 2rem;
+    display: none;
+  }
+`;
+
+const MobileImageContainer = styled.div`
+  display: none;
+
+  ${media('<=desktop')} {
+    display: flex;
     justify-content: center;
+    margin: 2rem 0;
     svg {
       max-width: 80%;
     }
