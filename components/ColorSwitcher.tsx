@@ -6,7 +6,6 @@ export default function ColorSwitcher() {
   const { toggleTheme, colorMode, changeTheme } = useColorSwitcher();
 
   useEffect(() => {
-    console.log(colorMode)
     if (colorMode != 'light') {
       changeTheme('light');
     }

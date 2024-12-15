@@ -18,8 +18,10 @@ import { NewsletterModalContextProvider, useNewsletterModalContext } from 'conte
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
+  { title: 'Accueil', href: '/' },
   { title: 'Tarifs', href: '/pricing' },
-  { title: "S'nscrire", href: '/contact', outlined: true },
+  { title: "S'inscrire", href: '/contact' },
+  { title: "Se connecter", href: 'https://timlead.com', outlined: true },
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {
