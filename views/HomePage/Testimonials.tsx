@@ -19,15 +19,6 @@ const TESTIMONIALS = [
     },
   },
   {
-    companyLogoUrl: '/testimonials/company-logo-1.svg',
-    content: `TIMLEAD a transformé notre gestion des opérations. Le suivi en temps réel de nos techniciens et la centralisation des informations ont considérablement amélioré notre efficacité.`,
-    author: {
-      name: 'Marie Dubois',
-      title: 'Directrice des Opérations',
-      avatarUrl: '/testimonials/author-photo-3.jpeg',
-    },
-  },
-  {
     companyLogoUrl: '/testimonials/company-logo-2.svg',
     content: `L'interface intuitive et la cartographie interactive nous permettent de gérer facilement nos équipes sur le terrain. Un vrai gain de temps et d'efficacité.`,
     author: {

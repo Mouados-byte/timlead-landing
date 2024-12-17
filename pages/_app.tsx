@@ -18,9 +18,9 @@ import { NavItems } from 'types';
 
 const navItems: NavItems = [
   { title: 'Accueil', href: '/' },
-  { title: 'Tarifs', href: '/pricing' },
   { title: 'Fonctionnalités', href: '/features' },
-  { title: "S'inscrire", href: '/contact' },
+  { title: 'Tarifs', href: '/pricing' },
+  { title: "Demander une demo", href: '/contact' },
   { title: "Se connecter", href: 'https://timlead.com', outlined: true },
 ];
 
