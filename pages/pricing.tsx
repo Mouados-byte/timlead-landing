@@ -7,7 +7,7 @@ export default function PricingPage() {
   return (
     <Page 
       title="Tarifs TIMLEAD" 
-      description="Découvrez nos forfaits adaptés à vos besoins. Une solution complète de gestion opérationnelle pour optimiser vos interventions terrain."
+      description="Découvrez nos tarifs adaptés à vos besoins. Une solution complète de gestion opérationnelle pour optimiser vos interventions terrain."
     >
       <Wrapper>
         <PricingTablesSection />

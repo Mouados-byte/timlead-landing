@@ -5,7 +5,7 @@ import { media } from 'utils/media';
 export default function PricingTablesSection() {
   return (
     <Wrapper>
-      <Title>Forfaits d'abonnement mensuel</Title>
+      <Title>Tarifs d'abonnement mensuel</Title>
       <Description>Prix par utilisateur et par mois, engagement annuel</Description>
       
       <TableWrapper>
