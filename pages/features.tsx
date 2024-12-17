@@ -8,43 +8,43 @@ const FEATURES = [
     imageUrl: '/grid-icons/asset-1.svg',
     title: 'Gestion de Ticketing',
     description: 'Notre système de ticketing avancé permet une gestion complète du cycle de vie des interventions. Suivez en temps réel l`état des tickets, attribuez des priorités, et assurez une traçabilité totale des actions. Les techniciens peuvent mettre à jour leur progression directement depuis le terrain.',
-    demoImage: '/demo-illustration-3.png'
+    demoImage: '/demo/ticket.jpg'
   },
   {
     imageUrl: '/grid-icons/asset-2.svg',
     title: 'Géotracking en temps réel',
     description: 'Optimisez vos opérations terrain grâce à notre système de géolocalisation en temps réel. Visualisez la position exacte de vos techniciens, estimez précisément les temps d`arrivée, et réagissez rapidement aux urgences en assignant le technicien le plus proche.',
-    demoImage: '/demo-illustration-3.png'
+    demoImage: '/demo/geo_tracking.jpg'
   },
   {
     imageUrl: '/grid-icons/asset-3.svg',
     title: 'Cartographie interactive',
     description: 'Notre cartographie interactive offre une vue d`ensemble claire de vos opérations. Visualisez en un coup d`œil la répartition de vos équipes, les zones d`intervention, et les points d`intérêt pour une meilleure planification de vos activités.',
-    demoImage: '/demo-illustration-3.png'
+    demoImage: '/demo/map.jpg'
   },
   {
     imageUrl: '/grid-icons/asset-4.svg',
     title: 'Planification intelligente',
     description: 'Simplifiez la gestion de vos plannings grâce à notre outil de planification intelligent. Le système optimise automatiquement les attributions en fonction des compétences, de la localisation et des priorités d`intervention.',
-    demoImage: '/demo-illustration-3.png'
+    demoImage: '/demo/planning.jpg'
   },
   {
     imageUrl: '/grid-icons/asset-5.svg',
     title: 'Gestion d`inventaire',
     description: 'Gardez un contrôle total sur votre inventaire avec notre solution de gestion intégrée. Suivez en temps réel les stocks, les mouvements de matériel et anticipez les besoins pour garantir la continuité de vos opérations.',
-    demoImage: '/demo-illustration-3.png'
+    demoImage: '/demo/inventory.jpg'
   },
   {
     imageUrl: '/grid-icons/asset-6.svg',
     title: 'Chat en temps réel',
     description: 'Facilitez la communication entre vos équipes grâce à notre système de chat intégré. Partagez instantanément photos, documents et vidéos depuis le terrain pour une collaboration efficace et une résolution rapide des problèmes.',
-    demoImage: '/demo-illustration-3.png'
+    demoImage: '/demo/chat.jpg'
   },
   {
     imageUrl: '/grid-icons/asset-7.svg',
     title: 'Application mobile performante',
     description: 'Notre application mobile intuitive donne à vos équipes terrain tous les outils nécessaires dans leur poche. Accédez aux informations clients, aux historiques d`intervention et aux documentations techniques, même hors ligne.',
-    demoImage: '/demo-illustration-3.png'
+    demoImage: '/demo/mobile.png'
   }
 ];
 
@@ -151,10 +151,15 @@ const FeatureImageContainer = styled.div`
   flex: 1;
   border-radius: 0.6rem;
   overflow: hidden;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    max-height: 550px; /* Adjust this value based on your design */
+    object-fit: contain; /* Ensures the image fits without stretching */
+    aspect-ratio: 16 / 9; /* Keeps a consistent aspect ratio */
   }
-`; 
+`;
