@@ -44,7 +44,13 @@ const FEATURES = [
     imageUrl: '/grid-icons/asset-7.svg',
     title: 'Application mobile performante',
     description: 'Notre application mobile intuitive donne à vos équipes terrain tous les outils nécessaires dans leur poche. Accédez aux informations clients, aux historiques d`intervention et aux documentations techniques, même hors ligne.',
-    demoImage: '/demo/mobile.png'
+    demoImage: '/demo/mobile.jpg'
+  },
+  {
+    imageUrl: '/grid-icons/asset-8.svg',
+    title: 'Gestion complète des ressources',
+    description: 'Une solution intégrée pour gérer vos sites, équipements, articles et clients. Centralisez toutes vos données essentielles, suivez l`état de vos ressources en temps réel et optimisez leur utilisation pour une meilleure efficacité opérationnelle.',
+    demoImage: '/demo/resources.jpg'
   }
 ];
 
@@ -127,11 +133,17 @@ const FeatureCard = styled.div<{ reversed?: boolean }>`
 
 const FeatureContent = styled.div`
   flex: 1;
+  ${media('<=tablet')} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
 `;
 
 const FeatureIcon = styled.img`
-  width: 6rem;
-  height: 6rem;
+  width: 12rem;
+  height: 12rem;
   margin-bottom: 2rem;
 `;
 
