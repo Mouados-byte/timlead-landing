@@ -12,12 +12,10 @@ export default function Hero() {
     <HeroWrapper>
       <Contents>
         <TextContent>
-          <Heading>Optimisez votre gestion d'opérations avec TIMLEAD</Heading>
+          <Heading>TIMLEAD, Solution tout-en-un</Heading>
           <CustomOverTitle>Solution tout-en-un de gestion d'opérations</CustomOverTitle>
           <Description>
-            TIMLEAD est une plateforme tout-en-un dédiée à la gestion des opérations, permettant de 
-            centraliser et d'optimiser vos processus pour une meilleure efficacité, réactivité et suivi en 
-            temps réel.
+          Imaginez une seule solution réunissant la puissance de Trello, ServiceNow, Praxedo, QGIS Server, MS Project et WhatsApp pour transformer votre gestion en une expérience fluide, collaborative et intelligente : découvrez <strong>TimLead</strong>.
           </Description>
         </TextContent>
         <MobileImageContainer>
@@ -106,7 +104,7 @@ const CustomOverTitle = styled(OverTitle)`
 `;
 
 const Heading = styled.h1`
-  font-size: 4rem;
+  font-size: 5.5rem;
   font-weight: bold;
   line-height: 1.1;
   margin-bottom: 2rem;

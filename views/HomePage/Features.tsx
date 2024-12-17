@@ -87,8 +87,6 @@ export default function Features() {
     autoplay: true,
     autoplaySpeed: 3000,
     swipe: true,
-    prevArrow: <SamplePrevArrow />,
-    nextArrow: <SampleNextArrow />,
     responsive: [
       {
         breakpoint: 1024,

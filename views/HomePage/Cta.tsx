@@ -27,7 +27,7 @@ export default function Cta() {
             </NextLink>
             <NextLink href="/pricing" passHref>
               <OutlinedButton transparent>
-                Voir les forfaits <span>&rarr;</span>
+                Voir les tarifs <span>&rarr;</span>
               </OutlinedButton>
             </NextLink>
           </ButtonGroup>
