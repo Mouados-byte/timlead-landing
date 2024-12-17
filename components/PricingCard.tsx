@@ -5,14 +5,13 @@ import Button from './Button';
 
 interface PricingCardProps {
   title: string;
+  price: string;
   description: string;
   benefits: string[];
   isOutlined?: boolean;
 }
 
-export default function PricingCard({ title, description, benefits, isOutlined, children }: PropsWithChildren<PricingCardProps>) {
-  const isAnyBenefitPresent = benefits?.length;
-
+export default function PricingCard({ title, price, description, benefits, isOutlined }: PricingCardProps) {
   return (
     <Wrapper isOutlined={isOutlined}>
       <Header isOutlined={isOutlined}>
@@ -21,19 +20,22 @@ export default function PricingCard({ title, description, benefits, isOutlined, 
       </Header>
       <Content>
         <PriceContainer>
-          <Price>{children}</Price>
+          <Price>
+            {price}
+            {price !== 'Sur demande' && <span>/utilisateur</span>}
+          </Price>
         </PriceContainer>
-        {isAnyBenefitPresent && (
-          <BenefitsList>
-            {benefits.map((benefit, idx) => (
-              <BenefitItem key={idx}>
-                <CheckIcon>✓</CheckIcon>
-                {benefit}
-              </BenefitItem>
-            ))}
-          </BenefitsList>
-        )}
-        <CustomButton isOutlined={isOutlined}>Demander une démo</CustomButton>
+        <BenefitsList>
+          {benefits.map((benefit, idx) => (
+            <BenefitItem key={idx}>
+              <CheckIcon>✓</CheckIcon>
+              {benefit}
+            </BenefitItem>
+          ))}
+        </BenefitsList>
+        <CustomButton isOutlined={isOutlined}>
+          Demander une démo
+        </CustomButton>
       </Content>
     </Wrapper>
   );
@@ -122,7 +124,7 @@ const CheckIcon = styled.span`
   font-weight: bold;
 `;
 
-const CustomButton = styled(Button)<{ isOutlined?: boolean }>`
+const CustomButton = styled(Button) <{ isOutlined?: boolean }>`
   width: 100%;
   margin-top: auto;
   background: ${(p) => (p.isOutlined ? 'rgb(var(--primary))' : 'transparent')};
