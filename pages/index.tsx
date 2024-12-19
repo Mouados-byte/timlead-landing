@@ -3,22 +3,33 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import BasicSection from 'components/BasicSection';
 import { EnvVars } from 'env';
-import { getAllPosts } from 'utils/postsFetcher';
 import Cta from 'views/HomePage/Cta';
 import Features from 'views/HomePage/Features';
 import FeaturesGallery from 'views/HomePage/FeaturesGallery';
 import Hero from 'views/HomePage/Hero';
 import Partners from 'views/HomePage/Partners';
 import Testimonials from 'views/HomePage/Testimonials';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import LanguageSwitcher from '../components/LanguageSwitcher';
 
-export default function Homepage({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
+export default function Homepage() {
+  const { t } = useTranslation('common');
   return (
     <>
       <Head>
         <title>{EnvVars.SITE_NAME}</title>
         <meta
           name="description"
-          content="TIMLEAD est une plateforme tout-en-un dédiée à la gestion des opérations, permettant de centraliser et d'optimiser vos processus pour une meilleure efficacité."
+          content={t('description')}
         />
       </Head>
       <HomepageWrapper>
@@ -26,18 +37,14 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           <Hero />
           <BasicSection 
             imageUrl="/demo-illustration-1.svg" 
-            title="Une solution complète pour votre gestion opérationnelle" 
-            overTitle="Pourquoi TIMLEAD ?"
+            title={t('completeSolution')}
+            overTitle={t('whyTimlead')}
           >
-            <p>
-              TIMLEAD centralise toutes les fonctionnalités essentielles pour la gestion des opérations : 
-              gestion de Ticketing, planification des tâches, CRM, inventaire des équipements, etc. 
-              Notre plateforme permet de simplifier la gestion et d`éviter la multiplication des outils.
-            </p>
+            <p>{t('mainDescription')}</p>
             <ul>
-              <li>Interface intuitive et personnalisable</li>
-              <li>Suivi en temps réel des techniciens</li>
-              <li>Solution centralisée tout-en-un</li>
+              <li>{t('features.interface')}</li>
+              <li>{t('features.tracking')}</li>
+              <li>{t('features.solution')}</li>
             </ul>
           </BasicSection>
         </WhiteBackgroundContainer>
@@ -77,11 +84,3 @@ const WhiteBackgroundContainer = styled.div`
     margin-top: 8rem;
   }
 `;
-
-export async function getStaticProps() {
-  return {
-    props: {
-      posts: await getAllPosts(),
-    },
-  };
-}

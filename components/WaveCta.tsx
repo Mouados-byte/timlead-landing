@@ -5,8 +5,10 @@ import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
 import SectionTitle from 'components/SectionTitle';
 import { media } from 'utils/media';
+import { useTranslation } from 'next-i18next';
 
 export default function WaveCta() {
+  const { t } = useTranslation('common');
 
   return (
     <>
@@ -19,10 +21,10 @@ export default function WaveCta() {
       </svg>
       <CtaWrapper>
         <Container>
-          <Title>Transformez votre gestion opérationnelle avec TIMLEAD</Title>
+          <Title>{t('waveCta.title')}</Title>
           <CustomButtonGroup>
             <Button className='text-lg' href='/contact'>
-              Demander une démonstration
+              {t('waveCta.demo')}
             </Button>
           </CustomButtonGroup>
         </Container>

@@ -7,59 +7,69 @@ import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
 import ThreeLayersCircle from 'components/ThreeLayersCircle';
 import { media } from 'utils/media';
+import { useTranslation } from 'next-i18next';
 
 const TABS = [
   {
-    title: 'Solution tout-en-un centralisée',
-    description: `<p>TIMLEAD centralise toutes les fonctionnalités essentielles pour la gestion des opérations : gestion de Ticketing, planification des tâches, CRM, inventaire des équipements, etc. Cela permet de simplifier la gestion et d'éviter la multiplication des outils.</p>`,
+    translationKey: 'allInOne',
     imageUrl: '/demo-illustration-3.png',
     baseColor: '249,82,120',
     secondColor: '221,9,57',
   },
   {
-    title: 'Suivi en temps réel des techniciens',
-    description: `<p>Le Géotracking permet de suivre les techniciens en temps réel, améliorant ainsi la réactivité et l'efficacité des interventions, tout en optimisant les itinéraires et les plannings.</p>`,
+    translationKey: 'tracking',
     imageUrl: '/demo-illustration-4.png',
     baseColor: '57,148,224',
     secondColor: '99,172,232',
   },
   {
-    title: 'Gestion de projet intégrée',
-    description: `<p>TIMLEAD inclut des outils pour organiser et suivre les projets, gérer les jalons, valider les tâches et contrôler les SLA, pour une gestion précise et efficace des projets.</p>`,
+    translationKey: 'projectManagement',
     imageUrl: '/demo-illustration-5.png',
     baseColor: '88,193,132',
     secondColor: '124,207,158',
-  }
+  },
 ];
 
 export default function FeaturesGallery() {
+  const { t } = useTranslation('common');
   const [currentTab, setCurrentTab] = useState(TABS[0]);
 
   const imagesMarkup = TABS.map((singleTab, idx) => {
-    const isActive = singleTab.title === currentTab.title;
+    const isActive = singleTab.translationKey === currentTab.translationKey;
     const isFirst = idx === 0;
 
     return (
-      <ImageContainer key={singleTab.title} isActive={isActive}>
-        <NextImage src={singleTab.imageUrl} alt={singleTab.title} layout="fill" objectFit="contain" priority={isFirst} />
+      <ImageContainer key={singleTab.translationKey} isActive={isActive}>
+        <NextImage 
+          src={singleTab.imageUrl} 
+          alt={t(`featuresGallery.tabs.${singleTab.translationKey}.title`)} 
+          layout="fill" 
+          objectFit="contain" 
+          priority={isFirst} 
+        />
       </ImageContainer>
     );
   });
 
   const tabsMarkup = TABS.map((singleTab, idx) => {
-    const isActive = singleTab.title === currentTab.title;
+    const isActive = singleTab.translationKey === currentTab.translationKey;
 
     return (
       <Tab isActive={isActive} key={idx} onClick={() => handleTabClick(idx)}>
         <TabTitleContainer>
           <CircleContainer>
-            <ThreeLayersCircle baseColor={isActive ? 'transparent' : singleTab.baseColor} secondColor={singleTab.secondColor} />
+            <ThreeLayersCircle 
+              baseColor={isActive ? 'transparent' : singleTab.baseColor} 
+              secondColor={singleTab.secondColor} 
+            />
           </CircleContainer>
-          <h4>{singleTab.title}</h4>
+          <h4>{t(`featuresGallery.tabs.${singleTab.translationKey}.title`)}</h4>
         </TabTitleContainer>
         <Collapse isOpen={isActive} duration={300}>
           <TabContent>
-            <div dangerouslySetInnerHTML={{ __html: singleTab.description }}></div>
+            <div dangerouslySetInnerHTML={{ 
+              __html: t(`featuresGallery.tabs.${singleTab.translationKey}.description`) 
+            }}></div>
           </TabContent>
         </Collapse>
       </Tab>
@@ -73,8 +83,8 @@ export default function FeaturesGallery() {
   return (
     <FeaturesGalleryWrapper>
       <Content>
-        <OverTitle>Fonctionnalités principales</OverTitle>
-        <SectionTitle>Pourquoi TIMLEAD est plus puissant qu'un outil standard ?</SectionTitle>
+        <OverTitle>{t('featuresGallery.mainTitle')}</OverTitle>
+        <SectionTitle>{t('featuresGallery.subtitle')}</SectionTitle>
       </Content>
       {/* <GalleryWrapper>
         <TabsContainer>{tabsMarkup}</TabsContainer>

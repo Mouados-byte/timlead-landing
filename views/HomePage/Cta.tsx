@@ -6,28 +6,28 @@ import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
 import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
+import { useTranslation } from 'next-i18next';
 import { media } from 'utils/media';
 
 export default function Cta() {
+  const { t } = useTranslation('common');
+  
   return (
     <CtaWrapper>
       <Container>
         <Stack>
-          <OverTitle>Prêt à optimiser vos opérations ?</OverTitle>
-          <SectionTitle>Découvrez la puissance de TIMLEAD pour votre entreprise</SectionTitle>
-          <Description>
-            Rejoignez les entreprises qui ont déjà transformé leur gestion opérationnelle grâce à notre solution 
-            tout-en-un. Centralisez vos processus, optimisez vos interventions et améliorez votre efficacité dès aujourd'hui.
-          </Description>
+          <OverTitle>{t('cta.ready')}</OverTitle>
+          <SectionTitle>{t('cta.discover')}</SectionTitle>
+          <Description>{t('cta.description')}</Description>
           <ButtonGroup>
             <NextLink href="/contact" passHref>
               <Button>
-                Demander une démo <span>&rarr;</span>
+                {t('cta.demo')} <span>&rarr;</span>
               </Button>
             </NextLink>
             <NextLink href="/pricing" passHref>
               <OutlinedButton transparent>
-                Voir les tarifs <span>&rarr;</span>
+                {t('cta.pricing')} <span>&rarr;</span>
               </OutlinedButton>
             </NextLink>
           </ButtonGroup>

@@ -1,0 +1,101 @@
+{
+  "welcome": "TIMLEAD, Lead your business",
+  "description": "Solution tout-en-un de gestion d'opérations",
+  "whyTimlead": "Pourquoi TIMLEAD ?",
+  "completeSolution": "Une solution complète pour votre gestion opérationnelle",
+  "mainDescription": "TIMLEAD centralise toutes les fonctionnalités essentielles pour la gestion des opérations : gestion de Ticketing, planification des tâches, CRM, inventaire des équipements, etc. Notre plateforme permet de simplifier la gestion et d'éviter la multiplication des outils.",
+  "features": {
+    "mainTitle": "Fonctionnalités principales",
+    "subtitle": "Pourquoi TIMLEAD est plus puissant qu'un outil standard ?",
+    "items": {
+      "ticketing": {
+        "title": "Gestion de Ticketing",
+        "description": "Gérez efficacement vos interventions, le suivi des demandes et la résolution de problèmes pour le raccordement et la maintenance client."
+      },
+      "geotracking": {
+        "title": "Géotracking en temps réel",
+        "description": "Suivez vos techniciens sur le terrain et optimisez les itinéraires en temps réel pour une meilleure efficacité opérationnelle."
+      },
+      "mapping": {
+        "title": "Cartographie interactive",
+        "description": "Visualisez clients, équipes et ressources sur une carte dynamique pour une gestion géospatiale optimale de vos opérations."
+      },
+      "planning": {
+        "title": "Planification intelligente",
+        "description": "Optimisez les rondes d'intervention, la maintenance et le suivi des parcours réalisés par vos techniciens."
+      },
+      "inventory": {
+        "title": "Gestion d'inventaire",
+        "description": "Suivez les taux d'occupation des équipements et gérez le Provisionning de manière efficace et centralisée."
+      },
+      "mobile": {
+        "title": "Application mobile performante",
+        "description": "Donnez à vos équipes terrain accès à toutes les informations via une application mobile intuitive."
+      },
+      "chat": {
+        "title": "Chat en temps réel",
+        "description": "Chat en temps réel avec les techniciens, partage de photos, documents et vidéos depuis le terrain."
+      }
+    }
+  },
+  "cta": {
+    "ready": "Prêt à optimiser vos opérations ?",
+    "discover": "Découvrez la puissance de TIMLEAD pour votre entreprise",
+    "description": "Rejoignez les entreprises qui ont déjà transformé leur gestion opérationnelle grâce à notre solution tout-en-un. Centralisez vos processus, optimisez vos interventions et améliorez votre efficacité dès aujourd'hui.",
+    "demo": "Demander une démo",
+    "pricing": "Voir les tarifs"
+  },
+  "hero": {
+    "title": "TIMLEAD,\nLead your business",
+    "subtitle": "Solution tout-en-un de gestion d'opérations",
+    "description": "Imaginez une seule solution réunissant la puissance de Trello, ServiceNow, Praxedo, QGIS Server, MS Project et WhatsApp pour transformer votre gestion en une expérience fluide, collaborative et intelligente : découvrez <strong>TimLead</strong>.",
+    "cta": "Commencer maintenant"
+  },
+  "featuresPage": {
+    "title": "Fonctionnalités TIMLEAD",
+    "description": "Découvrez toutes les fonctionnalités de TIMLEAD pour optimiser la gestion de vos opérations terrain.",
+    "mainTitle": "Nos Fonctionnalités",
+    "mainDescription": "TIMLEAD offre une suite complète d'outils pour optimiser vos opérations terrain. Découvrez comment chaque fonctionnalité peut transformer votre gestion quotidienne.",
+    "demoAlt": "Démonstration {feature}"
+  },
+  "featuresGallery": {
+    "mainTitle": "Fonctionnalités principales",
+    "subtitle": "Pourquoi TIMLEAD est plus puissant qu'un outil standard ?",
+    "tabs": {
+      "allInOne": {
+        "title": "Solution tout-en-un centralisée",
+        "description": "<p>TIMLEAD centralise toutes les fonctionnalités essentielles pour la gestion des opérations : gestion de Ticketing, planification des tâches, CRM, inventaire des équipements, etc. Cela permet de simplifier la gestion et d'éviter la multiplication des outils.</p>"
+      },
+      "tracking": {
+        "title": "Suivi en temps réel des techniciens",
+        "description": "<p>Le Géotracking permet de suivre les techniciens en temps réel, améliorant ainsi la réactivité et l'efficacité des interventions, tout en optimisant les itinéraires et les plannings.</p>"
+      },
+      "projectManagement": {
+        "title": "Gestion de projet intégrée",
+        "description": "<p>TIMLEAD inclut des outils pour organiser et suivre les projets, gérer les jalons, valider les tâches et contrôler les SLA, pour une gestion précise et efficace des projets.</p>"
+      }
+    }
+  },
+  "testimonials": {
+    "items": [
+      {
+        "content": "La gestion des tickets et le suivi des interventions sont devenus beaucoup plus simples. Nos clients sont ravis de la réactivité de nos équipes.",
+        "author": {
+          "name": "Joubair Tarik",
+          "title": "Responsable Technique"
+        }
+      },
+      {
+        "content": "L'interface intuitive et la cartographie interactive nous permettent de gérer facilement nos équipes sur le terrain. Un vrai gain de temps et d'efficacité.",
+        "author": {
+          "name": "Thomas Martin",
+          "title": "Responsable Technique"
+        }
+      }
+    ]
+  },
+  "waveCta": {
+    "title": "Transformez votre gestion opérationnelle avec TIMLEAD",
+    "demo": "Demander une démonstration"
+  }
+}

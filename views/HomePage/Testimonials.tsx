@@ -1,57 +1,69 @@
 import NextImage from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
-
 import { A11y, Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Container from 'components/Container';
 import Separator from 'components/Separator';
 import { media } from 'utils/media';
+import { useTranslation } from 'next-i18next';
 
 const TESTIMONIALS = [
   {
     companyLogoUrl: '/testimonials/netis_logo.png',
-    content: `La gestion des tickets et le suivi des interventions sont devenus beaucoup plus simples. Nos clients sont ravis de la réactivité de nos équipes.`,
+    index: 0,
     author: {
-      name: 'Joubair Tarik',
-      title: 'Responsable Technique',
       avatarUrl: '/testimonials/author-photo-1.jpeg',
     },
   },
   {
     companyLogoUrl: '/testimonials/company-logo-2.svg',
-    content: `L'interface intuitive et la cartographie interactive nous permettent de gérer facilement nos équipes sur le terrain. Un vrai gain de temps et d'efficacité.`,
+    index: 1,
     author: {
-      name: 'Thomas Martin',
-      title: 'Responsable Technique',
       avatarUrl: '/testimonials/author-photo-2.jpeg',
     },
   },
 ];
 
 export default function Testimonials() {
+  const { t } = useTranslation('common');
+
   return (
     <div>
       <Separator />
       <TestimonialsWrapper>
-        <Swiper modules={[Navigation, Autoplay, A11y]} slidesPerView={1} autoplay={{ delay: 8000 }} centeredSlides navigation loop>
+        <Swiper
+          modules={[Navigation, Autoplay, A11y]}
+          navigation
+          autoplay
+          spaceBetween={50}
+          slidesPerView={1}
+        >
           {TESTIMONIALS.map((singleTestimonial, idx) => (
             <SwiperSlide key={idx}>
               <TestimonialCard>
                 <NextImage
                   src={singleTestimonial.companyLogoUrl}
-                  alt={`${singleTestimonial.author.name}'s company logo`}
+                  alt={t(`testimonials.items.${singleTestimonial.index}.author.name`)}
                   width={200}
-                  height={200}
+                  height={40}
+                  objectFit="contain"
                 />
-                <Content>“{singleTestimonial.content}”</Content>
+                <Content>
+                  {t(`testimonials.items.${singleTestimonial.index}.content`)}
+                </Content>
                 <AuthorContainer>
                   <AuthorImageContainer>
-                    <NextImage src={singleTestimonial.author.avatarUrl} alt={singleTestimonial.author.name} width={48} height={48} />
+                    <NextImage
+                      src={singleTestimonial.author.avatarUrl}
+                      alt={t(`testimonials.items.${singleTestimonial.index}.author.name`)}
+                      width={48}
+                      height={48}
+                    />
                   </AuthorImageContainer>
                   <AuthorContent>
-                    <AuthorName>{singleTestimonial.author.name}</AuthorName>
-                    <AuthorTitle>{singleTestimonial.author.title}</AuthorTitle>
+                    <AuthorName>{t(`testimonials.items.${singleTestimonial.index}.author.name`)}</AuthorName>
+                    <AuthorTitle>{t(`testimonials.items.${singleTestimonial.index}.author.title`)}</AuthorTitle>
                   </AuthorContent>
                 </AuthorContainer>
               </TestimonialCard>

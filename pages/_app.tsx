@@ -15,6 +15,7 @@ import NavigationDrawer from 'components/NavigationDrawer';
 import NewsletterModal from 'components/NewsletterModal';
 import WaveCta from 'components/WaveCta';
 import { NavItems } from 'types';
+import { appWithTranslation } from 'next-i18next';
 
 const navItems: NavItems = [
   { title: 'Accueil', href: '/' },
@@ -83,4 +84,4 @@ function Providers<T>({ children }: PropsWithChildren<T>) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

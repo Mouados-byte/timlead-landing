@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import BasicCard from 'components/BasicCard';
 import Container from 'components/Container';
 import { media } from 'utils/media';
+import { useTranslation } from 'next-i18next';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -37,46 +38,39 @@ function SampleNextArrow(props: any) {
   );
 }
 
-
 const FEATURES = [
   {
     imageUrl: '/grid-icons/asset-1.svg',
-    title: 'Gestion de Ticketing',
-    description: 'Gérez efficacement vos interventions, le suivi des demandes et la résolution de problèmes pour le raccordement et la maintenance client.',
+    translationKey: 'ticketing',
   },
   {
     imageUrl: '/grid-icons/asset-2.svg',
-    title: 'Géotracking en temps réel',
-    description: 'Suivez vos techniciens sur le terrain et optimisez les itinéraires en temps réel pour une meilleure efficacité opérationnelle.',
+    translationKey: 'geotracking',
   },
   {
     imageUrl: '/grid-icons/asset-3.svg',
-    title: 'Cartographie interactive',
-    description: 'Visualisez clients, équipes et ressources sur une carte dynamique pour une gestion géospatiale optimale de vos opérations.',
+    translationKey: 'mapping',
   },
   {
     imageUrl: '/grid-icons/asset-4.svg',
-    title: 'Planification intelligente',
-    description: 'Optimisez les rondes d`intervention, la maintenance et le suivi des parcours réalisés par vos techniciens.',
+    translationKey: 'planning',
   },
   {
     imageUrl: '/grid-icons/asset-5.svg',
-    title: 'Gestion d`inventaire',
-    description: 'Suivez les taux d`occupation des équipements et gérez le Provisionning de manière efficace et centralisée.',
+    translationKey: 'inventory',
   },
   {
     imageUrl: '/grid-icons/asset-7.svg',
-    title: 'Application mobile performante',
-    description: 'Donnez à vos équipes terrain accès à toutes les informations via une application mobile intuitive.',
+    translationKey: 'mobile',
   },
   {
     imageUrl: '/grid-icons/asset-6.svg',
-    title: 'Chat en temps réel',
-    description: 'Chat en temps réel avec les techniciens, partage de photos, documents et vidéos depuis le terrain.',
+    translationKey: 'chat',
   }
 ];
 
 export default function Features() {
+  const { t } = useTranslation('common');
   const settings = {
     arrows: true,
     dots: true,
@@ -107,9 +101,13 @@ export default function Features() {
     <Container>
       <CarouselWrapper>
         <Slider {...settings}>
-          {FEATURES.map((singleFeature, idx) => (
-            <CardWrapper key={singleFeature.title}>
-              <BasicCard {...singleFeature} />
+          {FEATURES.map((singleFeature) => (
+            <CardWrapper key={singleFeature.translationKey}>
+              <BasicCard 
+                imageUrl={singleFeature.imageUrl}
+                title={t(`features.items.${singleFeature.translationKey}.title`)}
+                description={t(`features.items.${singleFeature.translationKey}.description`)}
+              />
             </CardWrapper>
           ))}
         </Slider>
