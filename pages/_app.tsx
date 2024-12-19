@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* Preconnect for fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="/favicon.ico" />
 
         {/* Page Title */}
         <meta name="description" content="TIMLEAD - Solution de gestion des interventions techniques et suivi des techniciens en temps réel" />

@@ -20,7 +20,7 @@ export default function Hero() {
     <HeroWrapper>
       <Contents>
         <TextContent>
-          <Heading>TIMLEAD, Solution tout-en-un</Heading>
+          <Heading>TIMLEAD, Lead your business</Heading>
           <CustomOverTitle>Solution tout-en-un de gestion d'opérations</CustomOverTitle>
           <Description>
             Imaginez une seule solution réunissant la puissance de Trello, ServiceNow, Praxedo, QGIS Server, MS Project et WhatsApp pour transformer votre gestion en une expérience fluide, collaborative et intelligente : découvrez <strong>TimLead</strong>.

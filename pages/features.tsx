@@ -41,16 +41,16 @@ const FEATURES = [
     demoImage: '/demo/chat.jpg'
   },
   {
-    imageUrl: '/grid-icons/asset-7.svg',
-    title: 'Application mobile performante',
-    description: 'Notre application mobile intuitive donne à vos équipes terrain tous les outils nécessaires dans leur poche. Accédez aux informations clients, aux historiques d`intervention et aux documentations techniques, même hors ligne.',
-    demoImage: '/demo/mobile.jpg'
-  },
-  {
     imageUrl: '/grid-icons/asset-8.svg',
     title: 'Gestion complète des ressources',
     description: 'Une solution intégrée pour gérer vos sites, équipements, articles et clients. Centralisez toutes vos données essentielles, suivez l`état de vos ressources en temps réel et optimisez leur utilisation pour une meilleure efficacité opérationnelle.',
     demoImage: '/demo/resources.jpg'
+  },
+  {
+    imageUrl: '/grid-icons/asset-7.svg',
+    title: 'Application mobile performante',
+    description: 'Notre application mobile intuitive donne à vos équipes terrain tous les outils nécessaires dans leur poche. Accédez aux informations clients, aux historiques d`intervention et aux documentations techniques, même hors ligne.',
+    demoImage: '/demo/mobile.jpg'
   }
 ];
 

@@ -65,14 +65,14 @@ const FEATURES = [
     description: 'Suivez les taux d`occupation des équipements et gérez le Provisionning de manière efficace et centralisée.',
   },
   {
-    imageUrl: '/grid-icons/asset-6.svg',
-    title: 'Chat en temps réel',
-    description: 'Chat en temps réel avec les techniciens, partage de photos, documents et vidéos depuis le terrain.',
-  },
-  {
     imageUrl: '/grid-icons/asset-7.svg',
     title: 'Application mobile performante',
     description: 'Donnez à vos équipes terrain accès à toutes les informations via une application mobile intuitive.',
+  },
+  {
+    imageUrl: '/grid-icons/asset-6.svg',
+    title: 'Chat en temps réel',
+    description: 'Chat en temps réel avec les techniciens, partage de photos, documents et vidéos depuis le terrain.',
   }
 ];
 
