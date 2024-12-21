@@ -117,7 +117,8 @@
       "error": "Couldn't send email. Please try again.",
       "nameRequired": "Name is required",
       "emailRequired": "Email is required",
-      "messageRequired": "Message is required"
+      "messageRequired": "Message is required",
+      "captchaRequired": "Please verify that you are not a robot"
     },
     "info": {
       "title": "Contact information",

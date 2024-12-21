@@ -3,9 +3,11 @@ import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import Button from 'components/Button';
 import Input from 'components/Input';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { media } from 'utils/media';
 import MailSentState from '../../components/MailSentState';
 import { useTranslation } from 'next-i18next';
+import React from 'react';
 
 interface EmailPayload {
   name: string;
@@ -19,11 +21,18 @@ export default function FormSection() {
   const { t } = useTranslation('common');
   const [hasSuccessfullySentMail, setHasSuccessfullySentMail] = useState(false);
   const [hasErrored, setHasErrored] = useState(false);
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const { register, handleSubmit, formState } = useForm();
   const { isSubmitSuccessful, isSubmitting, isSubmitted, errors } = formState;
+  const recaptchaRef = React.createRef<ReCAPTCHA>();
 
   async function onSubmit(payload: EmailPayload) {
+    if (!isCaptchaVerified) {
+      alert(t('contact.form.captchaRequired'));
+      return;
+    }
     try {
+      const token = await recaptchaRef.current?.executeAsync();
       const res = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: {
@@ -46,6 +55,10 @@ export default function FormSection() {
   const isSent = isSubmitSuccessful && isSubmitted;
   const isDisabled = isSubmitting || isSent;
   const isSubmitDisabled = Object.keys(errors).length > 0 || isDisabled;
+
+  const handleCaptchaChange = (value: string | null) => {
+    setIsCaptchaVerified(!!value);
+  };
 
   if (hasSuccessfullySentMail) {
     return <MailSentState />;
@@ -85,6 +98,13 @@ export default function FormSection() {
             {...register('description', { required: true })}
           />
         </InputStack>
+        <CaptchaWrapper>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LdMb6IqAAAAAJ7WbnXmoD00ofOE0woPMPQ2DLxV"}
+            onChange={handleCaptchaChange}
+          />
+        </CaptchaWrapper>
         <Button as="button" type="submit" disabled={isSubmitDisabled}>
           {t('contact.form.submit')}
         </Button>
@@ -127,9 +147,14 @@ const InputGroup = styled.div`
 const InputStack = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   & > *:not(:first-child) {
     margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
@@ -141,4 +166,10 @@ const ErrorMessage = styled.p`
 const Textarea = styled(Input)`
   width: 100%;
   min-height: 20rem;
+`;
+
+const CaptchaWrapper = styled.div`
+  margin: 2rem 0;
+  display: flex;
+  justify-content: start;
 `;

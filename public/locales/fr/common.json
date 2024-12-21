@@ -117,7 +117,8 @@
       "error": "Impossible d'envoyer l'email. Veuillez réessayer.",
       "nameRequired": "Le nom est requis",
       "emailRequired": "L'email est requis",
-      "messageRequired": "Le message est requis"
+      "messageRequired": "Le message est requis",
+      "captchaRequired": "Veuillez vérifier que vous n'êtes pas un robot"
     },
     "info": {
       "title": "Informations de contact",
