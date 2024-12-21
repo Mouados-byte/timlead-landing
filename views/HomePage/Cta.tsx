@@ -1,4 +1,4 @@
-import NextLink from 'next/link';
+import LocalizedLink from 'components/LocalizedLink';
 import React from 'react';
 import styled from 'styled-components';
 import Button from 'components/Button';
@@ -20,16 +20,16 @@ export default function Cta() {
           <SectionTitle>{t('cta.discover')}</SectionTitle>
           <Description>{t('cta.description')}</Description>
           <ButtonGroup>
-            <NextLink href="/contact" passHref>
+            <LocalizedLink href="/contact" passHref>
               <Button>
                 {t('cta.demo')} <span>&rarr;</span>
               </Button>
-            </NextLink>
-            <NextLink href="/pricing" passHref>
+            </LocalizedLink>
+            <LocalizedLink href="/pricing" passHref>
               <OutlinedButton transparent>
                 {t('cta.pricing')} <span>&rarr;</span>
               </OutlinedButton>
-            </NextLink>
+            </LocalizedLink>
           </ButtonGroup>
         </Stack>
       </Container>

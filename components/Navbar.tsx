@@ -1,6 +1,6 @@
 "use client"
 import dynamic from "next/dynamic";
-import NextLink from "next/link";
+import LocalizedLink from 'components/LocalizedLink';
 import { useRouter } from "next/router";
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
@@ -12,6 +12,7 @@ import Container from "./Container";
 import Drawer from "./Drawer";
 import { HamburgerIcon } from "./HamburgerIcon";
 import Logo from "./Logo";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const ColorSwitcher = dynamic(() => import("../components/ColorSwitcher"), { ssr: false });
 
@@ -67,19 +68,17 @@ export default function Navbar({ items }: NavbarProps) {
   return (
     <NavbarContainer hidden={isNavbarHidden} transparent={isTransparent}>
       <Content>
-        <NextLink href="/" passHref>
+        <LocalizedLink href="/" passHref>
           <LogoWrapper>
             <Logo />
           </LogoWrapper>
-        </NextLink>
+        </LocalizedLink>
         <NavItemList>
           {items.map((singleItem) => (
             <NavItem key={singleItem.href} {...singleItem} />
           ))}
         </NavItemList>
-        <ColorSwitcherContainer>
-          <ColorSwitcher />
-        </ColorSwitcherContainer>
+        <LanguageSwitcher />
         <HamburgerMenuWrapper>
           <HamburgerIcon aria-label="Toggle menu" onClick={toggle} />
         </HamburgerMenuWrapper>
@@ -91,9 +90,9 @@ export default function Navbar({ items }: NavbarProps) {
 function NavItem({ href, title, outlined }: SingleNavItem) {
   return (
     <NavItemWrapper outlined={outlined}>
-      <NextLink href={href} passHref>
+      <LocalizedLink href={href} passHref>
         <a>{title}</a>
-      </NextLink>
+      </LocalizedLink>
     </NavItemWrapper>
   );
 }
