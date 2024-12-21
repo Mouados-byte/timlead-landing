@@ -105,7 +105,7 @@ export default function FormSection() {
             onChange={handleCaptchaChange}
           />
         </CaptchaWrapper>
-        <Button as="button" type="submit" disabled={isSubmitDisabled}>
+        <Button as="button" type="submit">
           {t('contact.form.submit')}
         </Button>
       </Form>
