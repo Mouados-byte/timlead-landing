@@ -9,6 +9,21 @@ import { createGlobalStyle } from 'styled-components';
 //   largeDesktop: 1440;
 // }
 
+// .next-dark-theme {
+//   --background: 26,32,44;
+//   --secondBackground: 45,55,72;
+//   --text: 237,237,238;
+//   --textSecondary: 255,255,255;
+//   --primary: 22,115,255; 
+//   --secondary: 10,18,30;
+//   --tertiary: 231,241,251;
+//   --cardBackground: 45,55,72;
+//   --inputBackground: 45,55,72;
+//   --navbarBackground: 45,55,72;
+//   --modalBackground: 26,32,44;
+//   --errorColor: 207,34,46;
+//   --logoColor: #fff;
+// }
 export const GlobalStyle = createGlobalStyle`
 
 .next-light-theme {
@@ -28,20 +43,22 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 .next-dark-theme {
-  --background: 26,32,44;
-  --secondBackground: 45,55,72;
-  --text: 237,237,238;
+  --background: 251,251,253;
+  --secondBackground: 255,255,255;
+  --text: 10,18,30;
   --textSecondary: 255,255,255;
   --primary: 22,115,255; 
   --secondary: 10,18,30;
   --tertiary: 231,241,251;
-  --cardBackground: 45,55,72;
-  --inputBackground: 45,55,72;
-  --navbarBackground: 45,55,72;
-  --modalBackground: 26,32,44;
+  --cardBackground: 255,255,255;
+  --inputBackground: 255,255,255;
+  --navbarBackground: 255,255,255;
+  --modalBackground: 251,251,253;
   --errorColor: 207,34,46;
-  --logoColor: #fff;
+  --logoColor: #243A5A;
 }
+
+
 
 :root {
   --font: 'Poppins', sans-serif;
