@@ -97,5 +97,32 @@
   "waveCta": {
     "title": "Transformez votre gestion opérationnelle avec TIMLEAD",
     "demo": "Demander une démonstration"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Besoin d'informations sur TIMLEAD ? Notre équipe est à votre disposition pour répondre à vos questions et vous accompagner dans votre projet.",
+    "headerTitle": "Parlons de votre projet",
+    "headerDescription": "Vous souhaitez optimiser la gestion de vos opérations terrain ? Notre équipe est là pour vous accompagner et vous proposer la solution adaptée à vos besoins.",
+    "form": {
+      "title": "Envoyez-nous un message",
+      "name": "Votre nom",
+      "email": "Votre email",
+      "phone": "Votre numéro de téléphone",
+      "company": "Nom de l'entreprise",
+      "message": "Votre message",
+      "submit": "Envoyer le message",
+      "error": "Impossible d'envoyer l'email. Veuillez réessayer.",
+      "nameRequired": "Le nom est requis",
+      "emailRequired": "L'email est requis",
+      "messageRequired": "Le message est requis"
+    },
+    "info": {
+      "title": "Informations de contact",
+      "description": "Remplissez le formulaire et notre équipe vous recontactera sous 24 heures.",
+      "phone": "Téléphone",
+      "email": "Email",
+      "address": "Adresse",
+      "social": "Suivez-nous"
+    }
   }
 }
