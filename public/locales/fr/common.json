@@ -36,7 +36,10 @@
         "title": "Chat en temps réel",
         "description": "Chat en temps réel avec les techniciens, partage de photos, documents et vidéos depuis le terrain."
       }
-    }
+    },
+    "interface": "Interface moderne et intuitive",
+    "tracking": "Suivi et monitoring en temps réel",
+    "solution": "Solution complète pour les opérations terrain"
   },
   "cta": {
     "ready": "Prêt à optimiser vos opérations ?",

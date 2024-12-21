@@ -35,7 +35,10 @@
       "chat": {
         "title": "Real-time Chat",
         "description": "Real-time chat with technicians, sharing photos, documents and videos from the field."
-      }
+      },
+      "interface": "Modern and intuitive interface",
+      "tracking": "Real-time tracking and monitoring",
+      "solution": "Complete solution for field operations"
     }
   },
   "cta": {

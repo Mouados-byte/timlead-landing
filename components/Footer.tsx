@@ -41,7 +41,7 @@ export default function Footer() {
               </a>
             </LocalizedLink>
           </ShareBar>
-          <Copyright>&copy; Copyright 2024 TimLead</Copyright>
+          <Copyright>&copy; Copyright {new Date().getFullYear()} TimLead</Copyright>
         </BottomBar>
       </Container>
     </FooterWrapper>
