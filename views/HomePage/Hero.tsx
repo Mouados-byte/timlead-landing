@@ -5,6 +5,7 @@ import Container from 'components/Container';
 import HeroIllustration from 'components/HeroIllustation';
 import OverTitle from 'components/OverTitle';
 import { media } from 'utils/media';
+import { useTranslation } from 'next-i18next';
 
 const COMPETITORS = [
   { name: 'Trello', logo: '/logos/trello.png' },
@@ -16,15 +17,15 @@ const COMPETITORS = [
 ];
 
 export default function Hero() {
+  const { t } = useTranslation('common');
+
   return (
     <HeroWrapper>
       <Contents>
         <TextContent>
-          <Heading>TIMLEAD,<br />Lead your business</Heading>
-          <CustomOverTitle>Solution tout-en-un de gestion d'opérations</CustomOverTitle>
-          <Description>
-            Imaginez une seule solution réunissant la puissance de Trello, ServiceNow, Praxedo, QGIS Server, MS Project et WhatsApp pour transformer votre gestion en une expérience fluide, collaborative et intelligente : découvrez <strong>TimLead</strong>.
-          </Description>
+          <Heading>{t('hero.title')}</Heading>
+          <CustomOverTitle>{t('hero.subtitle')}</CustomOverTitle>
+          <Description dangerouslySetInnerHTML={{ __html: t('hero.description') }} />
         </TextContent>
         <MobileImageContainer>
           <HeroIllustration />
@@ -57,7 +58,7 @@ export default function Hero() {
 
         <CustomButtonGroup>
           <Button href="/contact">
-            Commencer maintenant
+            {t('hero.cta')}
           </Button>
         </CustomButtonGroup>
       </Contents>

@@ -5,14 +5,18 @@ import Button from 'components/Button';
 import Input from 'components/Input';
 import { media } from 'utils/media';
 import MailSentState from '../../components/MailSentState';
+import { useTranslation } from 'next-i18next';
 
 interface EmailPayload {
   name: string;
   email: string;
+  phone: string;
+  company: string;
   description: string;
 }
 
 export default function FormSection() {
+  const { t } = useTranslation('common');
   const [hasSuccessfullySentMail, setHasSuccessfullySentMail] = useState(false);
   const [hasErrored, setHasErrored] = useState(false);
   const { register, handleSubmit, formState } = useForm();
@@ -50,29 +54,39 @@ export default function FormSection() {
   return (
     <Wrapper>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        {hasErrored && <ErrorMessage>Couldn&apos;t send email. Please try again.</ErrorMessage>}
+        {hasErrored && <ErrorMessage>{t('contact.form.error')}</ErrorMessage>}
         <InputGroup>
           <InputStack>
-            {errors.name && <ErrorMessage>Name is required</ErrorMessage>}
-            <Input placeholder="Your Name" id="name" disabled={isDisabled} {...register('name', { required: true })} />
+            {errors.name && <ErrorMessage>{t('contact.form.nameRequired')}</ErrorMessage>}
+            <Input 
+              placeholder={t('contact.form.name')} 
+              id="name" 
+              disabled={isDisabled} 
+              {...register('name', { required: true })} 
+            />
           </InputStack>
           <InputStack>
-            {errors.email && <ErrorMessage>Email is required</ErrorMessage>}
-            <Input placeholder="Your Email" id="email" disabled={isDisabled} {...register('email', { required: true })} />
+            {errors.email && <ErrorMessage>{t('contact.form.emailRequired')}</ErrorMessage>}
+            <Input 
+              placeholder={t('contact.form.email')} 
+              id="email" 
+              disabled={isDisabled} 
+              {...register('email', { required: true })} 
+            />
           </InputStack>
         </InputGroup>
         <InputStack>
-          {errors.description && <ErrorMessage>Description is required</ErrorMessage>}
+          {errors.description && <ErrorMessage>{t('contact.form.messageRequired')}</ErrorMessage>}
           <Textarea
             as="textarea"
-            placeholder="Enter Your Message..."
+            placeholder={t('contact.form.message')}
             id="description"
             disabled={isDisabled}
             {...register('description', { required: true })}
           />
         </InputStack>
         <Button as="button" type="submit" disabled={isSubmitDisabled}>
-          Send Message
+          {t('contact.form.submit')}
         </Button>
       </Form>
     </Wrapper>

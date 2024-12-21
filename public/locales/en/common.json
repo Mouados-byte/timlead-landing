@@ -1,0 +1,203 @@
+{
+  "welcome": "TIMLEAD, Lead your business",
+  "description": "All-in-one operations management platform",
+  "whyTimlead": "Why TIMLEAD?",
+  "completeSolution": "A complete solution for your operational management",
+  "mainDescription": "TIMLEAD centralizes all essential features for operations management: Ticketing management, task planning, CRM, equipment inventory, etc. Our platform simplifies management and avoids tool multiplication.",
+  "features": {
+    "mainTitle": "Main Features",
+    "subtitle": "Why TIMLEAD is more powerful than a standard tool?",
+    "items": {
+      "ticketing": {
+        "title": "Ticketing Management",
+        "description": "Efficiently manage your interventions, track requests and resolve issues for customer connection and maintenance."
+      },
+      "geotracking": {
+        "title": "Real-time Geotracking",
+        "description": "Track your technicians in the field and optimize routes in real-time for better operational efficiency."
+      },
+      "mapping": {
+        "title": "Interactive Mapping",
+        "description": "Visualize customers, teams and resources on a dynamic map for optimal geospatial management of your operations."
+      },
+      "planning": {
+        "title": "Smart Planning",
+        "description": "Optimize intervention rounds, maintenance and tracking of routes completed by your technicians."
+      },
+      "inventory": {
+        "title": "Inventory Management",
+        "description": "Monitor equipment occupancy rates and manage provisioning efficiently and centrally."
+      },
+      "mobile": {
+        "title": "Powerful Mobile App",
+        "description": "Give your field teams access to all information via an intuitive mobile application."
+      },
+      "chat": {
+        "title": "Real-time Chat",
+        "description": "Real-time chat with technicians, sharing photos, documents and videos from the field."
+      }
+    }
+  },
+  "cta": {
+    "ready": "Ready to optimize your operations?",
+    "discover": "Discover TIMLEAD's power for your business",
+    "description": "Join companies that have already transformed their operational management with our all-in-one solution. Centralize your processes, optimize your interventions and improve your efficiency today.",
+    "demo": "Request a demo",
+    "pricing": "See pricing"
+  },
+  "hero": {
+    "title": "TIMLEAD,\nLead your business",
+    "subtitle": "All-in-one operations management solution",
+    "description": "Imagine a single solution combining the power of Trello, ServiceNow, Praxedo, QGIS Server, MS Project and WhatsApp to transform your management into a smooth, collaborative and intelligent experience: discover <strong>TimLead</strong>.",
+    "cta": "Get Started Now"
+  },
+  "featuresPage": {
+    "title": "TIMLEAD Features",
+    "description": "Discover all TIMLEAD features to optimize your field operations management.",
+    "mainTitle": "Our Features",
+    "mainDescription": "TIMLEAD offers a complete suite of tools to optimize your field operations. Discover how each feature can transform your daily management.",
+    "demoAlt": "Demonstration of {feature}"
+  },
+  "featuresGallery": {
+    "mainTitle": "Main Features",
+    "subtitle": "Why TIMLEAD is more powerful than a standard tool?",
+    "tabs": {
+      "allInOne": {
+        "title": "All-in-one centralized solution",
+        "description": "<p>TIMLEAD centralizes all essential features for operations management: Ticketing management, task planning, CRM, equipment inventory, etc. This simplifies management and avoids tool multiplication.</p>"
+      },
+      "tracking": {
+        "title": "Real-time technician tracking",
+        "description": "<p>Geotracking allows real-time tracking of technicians, improving responsiveness and intervention efficiency while optimizing routes and schedules.</p>"
+      },
+      "projectManagement": {
+        "title": "Integrated project management",
+        "description": "<p>TIMLEAD includes tools to organize and track projects, manage milestones, validate tasks and control SLAs, for precise and efficient project management.</p>"
+      }
+    }
+  },
+  "testimonials": {
+    "items": [
+      {
+        "content": "Ticket management and intervention tracking have become much simpler. Our customers are delighted with our teams' responsiveness.",
+        "author": {
+          "name": "Joubair Tarik",
+          "title": "Technical Manager"
+        }
+      },
+      {
+        "content": "The intuitive interface and interactive mapping make it easy to manage our field teams. A real time-saver and efficiency boost.",
+        "author": {
+          "name": "Thomas Martin",
+          "title": "Technical Manager"
+        }
+      }
+    ]
+  },
+  "waveCta": {
+    "title": "Transform your operational management with TIMLEAD",
+    "demo": "Request a demo"
+  },
+  "contact": {
+    "title": "Contact us",
+    "description": "Need information about TIMLEAD? Our team is at your disposal to answer your questions and support you in your project.",
+    "headerTitle": "Let's talk about your project",
+    "headerDescription": "Want to optimize your field operations management? Our team is here to support you and offer the solution adapted to your needs.",
+    "form": {
+      "title": "Send us a message",
+      "name": "Your name",
+      "email": "Your email",
+      "phone": "Your phone number",
+      "company": "Company name",
+      "message": "Your message",
+      "submit": "Send message",
+      "error": "Couldn't send email. Please try again.",
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "messageRequired": "Message is required"
+    },
+    "info": {
+      "title": "Contact information",
+      "description": "Fill out the form and our team will get back to you within 24 hours.",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "social": "Follow us"
+    }
+  },
+  "pricing": {
+    "title": "TIMLEAD Pricing",
+    "description": "Discover our pricing adapted to your needs. A complete operational management solution to optimize your field operations.",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "difference": {
+          "question": "What differentiates TIMLEAD from other operational management solutions?",
+          "answer": "TIMLEAD stands out with its all-in-one approach combining ticketing management, geotracking, planning, and CRM in a single platform. Our solution is specially designed to optimize field team management, with an intuitive interface and powerful mobile application. Unlike traditional solutions, TIMLEAD offers a complete and centralized view of your operations."
+        },
+        "efficiency": {
+          "question": "How can TIMLEAD improve our field teams' efficiency?",
+          "answer": "TIMLEAD enables real-time technician tracking via geotracking, optimizes routes, and facilitates instant communication. Technicians can access all necessary information via the mobile app, share photos and documents, and update their intervention status in real-time. This allows for better coordination and significant reduction in intervention times."
+        },
+        "deployment": {
+          "question": "What is the average deployment time for TIMLEAD?",
+          "answer": "TIMLEAD deployment is quick and can be completed in a few weeks depending on your organization's size. Our team supports you at every step: initial configuration, user training, and ongoing support. The platform is designed to be intuitive, allowing your teams to quickly get up to speed."
+        },
+        "security": {
+          "question": "How does TIMLEAD handle data security?",
+          "answer": "Data security is a priority for TIMLEAD. Our platform uses advanced encryption protocols, regular backups, and complies with the strictest security standards. All data is hosted on secure servers, and we ensure full compliance with current regulations, including GDPR."
+        },
+        "support": {
+          "question": "What types of support and assistance do you offer?",
+          "answer": "We offer several levels of support based on your needs: technical support via email and phone, complete documentation, personalized training, and for businesses, dedicated support with an account manager. Our team is available to help you optimize TIMLEAD usage and answer your questions."
+        }
+      }
+    },
+    "try": "Try",
+    "contact": "Contact",
+    "monthlyTitle": "Monthly Subscription Pricing",
+    "monthlyDescription": "Price per user per month, annual commitment",
+    "features": "Features",
+    "features_list": {
+      "ticketing": "Ticketing management",
+      "planning": "Task planning",
+      "chat": "Instant chat",
+      "projectManagement": "Project management",
+      "mapping": "Interactive mapping",
+      "geotracking": "Real-time geotracking",
+      "crm": "Integrated CRM"
+    },
+    "plans": {
+      "starter": {
+        "name": "Start",
+        "price": "€39.90",
+        "period": "/month"
+      },
+      "advanced": {
+        "name": "Advanced",
+        "price": "€44.90",
+        "period": "/month"
+      },
+      "professional": {
+        "name": "Premium",
+        "price": "€55",
+        "period": "/month"
+      },
+      "advancedNetwork": {
+        "name": "Advanced Network",
+        "price": "€59.90",
+        "period": "/month"
+      },
+      "premiumNetwork": {
+        "name": "Premium Network",
+        "price": "€65",
+        "period": "/month"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Contact us",
+        "period": ""
+      }
+    }
+  }
+}

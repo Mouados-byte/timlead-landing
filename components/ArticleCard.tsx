@@ -1,7 +1,7 @@
 import NextImage from 'next/image';
-import NextLink from 'next/link';
 import styled from 'styled-components';
 import { media } from 'utils/media';
+import LocalizedLink from 'components/LocalizedLink';
 
 export interface ArticleCardProps {
   title: string;
@@ -12,7 +12,7 @@ export interface ArticleCardProps {
 
 export default function ArticleCard({ title, slug, imageUrl, description }: ArticleCardProps) {
   return (
-    <NextLink href={'/blog/' + slug} passHref>
+    <LocalizedLink href={'/blog/' + slug} passHref>
       <ArticleCardWrapper className="article-card-wrapper">
         <HoverEffectContainer>
           <ImageContainer>
@@ -24,7 +24,7 @@ export default function ArticleCard({ title, slug, imageUrl, description }: Arti
           </Content>
         </HoverEffectContainer>
       </ArticleCardWrapper>
-    </NextLink>
+    </LocalizedLink>
   );
 }
 

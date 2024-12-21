@@ -3,20 +3,29 @@ import Page from 'components/Page';
 import { media } from 'utils/media';
 import FormSection from 'views/ContactPage/FormSection';
 import InformationSection from 'views/ContactPage/InformationSection';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
 
 export default function ContactPage() {
+  const { t } = useTranslation('common');
+  
   return (
     <Page 
-      title="Contactez-nous" 
-      description="Besoin d'informations sur TIMLEAD ? Notre équipe est à votre disposition pour répondre à vos questions et vous accompagner dans votre projet."
+      title={t('contact.title')} 
+      description={t('contact.description')}
     >
       <HeaderSection>
         <HeaderContent>
-          <Title>Parlons de votre projet</Title>
-          <Description>
-            Vous souhaitez optimiser la gestion de vos opérations terrain ? 
-            Notre équipe est là pour vous accompagner et vous proposer la solution adaptée à vos besoins.
-          </Description>
+          <Title>{t('contact.headerTitle')}</Title>
+          <Description>{t('contact.headerDescription')}</Description>
         </HeaderContent>
       </HeaderSection>
       <ContactContainer>
