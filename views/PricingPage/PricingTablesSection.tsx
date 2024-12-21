@@ -1,139 +1,92 @@
-import React from 'react';
+import LocalizedLink from 'components/LocalizedLink';
+import { useTranslation } from 'next-i18next';
 import styled from 'styled-components';
-import { media } from 'utils/media';
+
+const PLANS = ['starter', 'advanced', 'professional', 'advancedNetwork', 'premiumNetwork', 'enterprise'] as const;
+const FEATURES = ['ticketing', 'planning', 'chat', 'projectManagement', 'mapping', 'geotracking', 'crm'] as const;
+
+const getFeatureAvailability = (plan: string, feature: string) => {
+  const featureMap: Record<string, Record<string, string | boolean>> = {
+    starter: { ticketing: '✓', planning: '-', chat: '-', projectManagement: '-', mapping: '-', geotracking: '-', crm: '-' },
+    advanced: { ticketing: '✓', planning: '✓', chat: '-', projectManagement: '-', mapping: '-', geotracking: '-', crm: '-' },
+    professional: { ticketing: '✓', planning: '✓', chat: '✓', projectManagement: '✓', mapping: '-', geotracking: '-', crm: '-' },
+    advancedNetwork: { ticketing: '✓', planning: '✓', chat: '✓', projectManagement: '✓', mapping: '✓', geotracking: '✓', crm: '-' },
+    premiumNetwork: { ticketing: '✓', planning: '✓', chat: '✓', projectManagement: '✓', mapping: '✓', geotracking: '✓', crm: '-' },
+    enterprise: { ticketing: '✓', planning: '✓', chat: '✓', projectManagement: '✓', mapping: '✓', geotracking: '✓', crm: '✓' }
+  };
+
+  return featureMap[plan]?.[feature] || '-';
+};
 
 export default function PricingTablesSection() {
+  const { t } = useTranslation('common');
+
   return (
     <Wrapper>
-      <Title>Tarifs d'abonnement mensuel</Title>
-      <Description>Prix par utilisateur et par mois, engagement annuel</Description>
-      
+      <Title>{t('pricing.monthlyTitle')}</Title>
+      <Description>{t('pricing.monthlyDescription')}</Description>
+
       <TableWrapper>
         <Table>
           <thead>
             <tr>
-              <th>Fonctionnalités</th>
-              <th>Start<Price>39.90€</Price></th>
-              <th>Advanced<Price>44.90€</Price></th>
-              <th className="highlighted">Premium<Price>55€</Price></th>
-              <th>Advanced Network<Price>59.90€</Price></th>
-              <th>Premium Network<Price>65€</Price></th>
-              <th>Enterprise<Price>Sur demande</Price></th>
+              <th>{t('pricing.features')}</th>
+              {PLANS.map((plan) => (
+                <th key={plan} className={plan === 'professional' ? 'highlighted' : ''}>
+                  {t(`pricing.plans.${plan}.name`)}
+                  <Price>{t(`pricing.plans.${plan}.price`)}{t(`pricing.plans.${plan}.period`)}</Price>
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Gestion de ticketing</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td className="highlighted">✓</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>Planification automatique</td>
-              <td>-</td>
-              <td>✓</td>
-              <td className="highlighted">✓</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>Affectation multi-projet</td>
-              <td>-</td>
-              <td>✓</td>
-              <td className="highlighted">✓</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>Chat instantané</td>
-              <td>-</td>
-              <td>-</td>
-              <td className="highlighted">✓</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>Gestion de projet</td>
-              <td>-</td>
-              <td>-</td>
-              <td className="highlighted">✓</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>Cartographie interactive</td>
-              <td>-</td>
-              <td>-</td>
-              <td className="highlighted">-</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>Géotracking en temps réel</td>
-              <td>-</td>
-              <td>-</td>
-              <td className="highlighted">-</td>
-              <td>✓</td>
-              <td>✓</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>CRM client intégré</td>
-              <td>-</td>
-              <td>-</td>
-              <td className="highlighted">-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>✓</td>
-            </tr>
-            <tr>
-              <td>Stockage</td>
-              <td>5 GiB</td>
-              <td>10 GiB</td>
-              <td className="highlighted">20 GiB</td>
-              <td>15 GiB</td>
-              <td>25 GiB</td>
-              <td>+25 GiB</td>
-            </tr>
-            <tr>
-              <td>Gestion des ressources</td>
-              <td>-</td>
-              <td>-</td>
-              <td className="highlighted">-</td>
-              <td>0.7€/ressource<br/>(jusqu'à 750)</td>
-              <td>0.5€/ressource<br/>(751-1500)</td>
-              <td>Sur mesure<br/>(+1500)</td>
-            </tr>
-            <tr>
-              <td>Support</td>
-              <td>Email</td>
-              <td>Prioritaire</td>
-              <td className="highlighted">Premium</td>
-              <td>Premium</td>
-              <td>Premium</td>
-              <td>Dédié</td>
-            </tr>
+            {FEATURES.map((feature) => (
+              <tr key={feature}>
+                <td>{t(`pricing.features_list.${feature}`)}</td>
+                {PLANS.map((plan) => (
+                  <td key={`${plan}-${feature}`} className={plan === 'professional' ? 'highlighted' : ''}>
+                    {getFeatureAvailability(plan, feature)}
+                  </td>
+                ))}
+              </tr>
+            ))}
             <tr className="action-row">
               <td></td>
-              <td><ActionButton>Essayer</ActionButton></td>
-              <td><ActionButton>Essayer</ActionButton></td>
-              <td className="highlighted"><ActionButton className="highlighted">Essayer</ActionButton></td>
-              <td><ActionButton>Essayer</ActionButton></td>
-              <td><ActionButton>Essayer</ActionButton></td>
-              <td><ActionButton>Contact</ActionButton></td>
-            </tr>
-          </tbody>
-        </Table>
-      </TableWrapper>
-    </Wrapper>
+              <td>
+                <LocalizedLink href="/contact">
+                  <ActionButton>{t("pricing.try")}</ActionButton>
+                </LocalizedLink>
+              </td>
+              <td>
+                <LocalizedLink href="/contact">
+                  <ActionButton>{t("pricing.try")}</ActionButton>
+                </LocalizedLink>
+              </td>
+              <td className="highlighted">
+                <LocalizedLink href="/contact">
+                  <ActionButton className="highlighted">{t("pricing.try")}</ActionButton>
+                </LocalizedLink>
+              </td>
+              <td>
+                <LocalizedLink href="/contact">
+                  <ActionButton>{t("pricing.try")}</ActionButton>
+                </LocalizedLink>
+              </td>
+              <td>
+                <LocalizedLink href="/contact">
+                  <ActionButton>{t("pricing.try")}</ActionButton>
+                </LocalizedLink>
+              </td>
+              <td>
+                <LocalizedLink href="/contact">
+                  <ActionButton>{t("pricing.contact")}</ActionButton>
+                </LocalizedLink >
+              </td>
+            </tr >
+          </tbody >
+        </Table >
+      </TableWrapper >
+    </Wrapper >
   );
 }
 

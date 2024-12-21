@@ -124,5 +124,93 @@
       "address": "Adresse",
       "social": "Suivez-nous"
     }
+  },
+  "pricing": {
+    "title": "Tarifs TIMLEAD",
+    "description": "Découvrez nos tarifs adaptés à vos besoins. Une solution complète de gestion opérationnelle pour optimiser vos interventions terrain.",
+    "monthlyTitle": "Tarifs d'abonnement mensuel",
+    "monthlyDescription": "Prix par utilisateur et par mois, engagement annuel",
+    "try": "Essayer",
+    "contact": "Contacter",
+    "features": "Fonctionnalités",
+    "features_list": {
+      "ticketing": "Gestion de ticketing",
+      "planning": "Planification automatique",
+      "multiProject": "Affectation multi-projet",
+      "chat": "Chat instantané",
+      "projectManagement": "Gestion de projet",
+      "mapping": "Cartographie interactive",
+      "geotracking": "Géotracking en temps réel",
+      "crm": "CRM client intégré"
+    },
+    "plans": {
+      "free": {
+        "name": "Gratuit",
+        "description": "Pour les petites équipes qui démarrent",
+        "price": "0",
+        "period": "/mois"
+      },
+      "starter": {
+        "name": "Start",
+        "description": "Pour les équipes en croissance",
+        "price": "39,90€",
+        "period": "/mois"
+      },
+      "advanced": {
+        "name": "Advanced",
+        "description": "Pour les équipes professionnelles",
+        "price": "44,90€",
+        "period": "/mois"
+      },
+      "professional": {
+        "name": "Premium",
+        "description": "Pour les équipes professionnelles",
+        "price": "55€",
+        "period": "/mois"
+      },
+      "advancedNetwork": {
+        "name": "Advanced Network",
+        "description": "Pour les grandes organisations",
+        "price": "59,90€",
+        "period": "/mois"
+      },
+      "premiumNetwork": {
+        "name": "Premium Network",
+        "description": "Pour les grandes organisations",
+        "price": "65€",
+        "period": "/mois"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Solution personnalisée pour les grandes organisations",
+        "price": "Sur demande",
+        "period": ""
+      }
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "items": {
+        "difference": {
+          "question": "Qu'est-ce qui différencie TIMLEAD des autres solutions de gestion opérationnelle ?",
+          "answer": "TIMLEAD se distingue par son approche tout-en-un qui combine gestion de ticketing, géotracking, planification et CRM dans une seule plateforme. Notre solution est spécialement conçue pour optimiser la gestion des équipes terrain, avec une interface intuitive et une application mobile performante. Contrairement aux solutions traditionnelles, TIMLEAD offre une vision complète et centralisée de vos opérations."
+        },
+        "efficiency": {
+          "question": "Comment TIMLEAD peut-il améliorer l'efficacité de nos équipes terrain ?",
+          "answer": "TIMLEAD permet un suivi en temps réel des techniciens via le géotracking, optimise les itinéraires et facilite la communication instantanée. Les techniciens peuvent accéder à toutes les informations nécessaires via l'application mobile, partager des photos et documents, et mettre à jour leur statut d'intervention en temps réel. Cela permet une meilleure coordination et une réduction significative des temps d'intervention."
+        },
+        "deployment": {
+          "question": "Quelle est la durée moyenne de déploiement de TIMLEAD ?",
+          "answer": "Le déploiement de TIMLEAD est rapide et peut être réalisé en quelques semaines selon la taille de votre organisation. Notre équipe vous accompagne à chaque étape : configuration initiale, formation des utilisateurs, et support continu. La plateforme est conçue pour être intuitive, permettant une prise en main rapide par vos équipes."
+        },
+        "security": {
+          "question": "Comment TIMLEAD gère-t-il la sécurité des données ?",
+          "answer": "La sécurité des données est une priorité pour TIMLEAD. Notre plateforme utilise des protocoles de cryptage avancés, des sauvegardes régulières, et respecte les normes de sécurité les plus strictes. Toutes les données sont hébergées sur des serveurs sécurisés, et nous assurons une conformité totale avec les réglementations en vigueur, notamment le RGPD."
+        },
+        "support": {
+          "question": "Quels types de support et d'accompagnement proposez-vous ?",
+          "answer": "Nous offrons plusieurs niveaux de support selon vos besoins : support technique par email et téléphone, documentation complète, formations personnalisées, et pour les entreprises, un accompagnement dédié avec un account manager. Notre équipe est disponible pour vous aider à optimiser l'utilisation de TIMLEAD et répondre à vos questions."
+        }
+      }
+    }
   }
 }

@@ -124,5 +124,80 @@
       "address": "Address",
       "social": "Follow us"
     }
+  },
+  "pricing": {
+    "title": "TIMLEAD Pricing",
+    "description": "Discover our pricing adapted to your needs. A complete operational management solution to optimize your field operations.",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "difference": {
+          "question": "What differentiates TIMLEAD from other operational management solutions?",
+          "answer": "TIMLEAD stands out with its all-in-one approach combining ticketing management, geotracking, planning, and CRM in a single platform. Our solution is specially designed to optimize field team management, with an intuitive interface and powerful mobile application. Unlike traditional solutions, TIMLEAD offers a complete and centralized view of your operations."
+        },
+        "efficiency": {
+          "question": "How can TIMLEAD improve our field teams' efficiency?",
+          "answer": "TIMLEAD enables real-time technician tracking via geotracking, optimizes routes, and facilitates instant communication. Technicians can access all necessary information via the mobile app, share photos and documents, and update their intervention status in real-time. This allows for better coordination and significant reduction in intervention times."
+        },
+        "deployment": {
+          "question": "What is the average deployment time for TIMLEAD?",
+          "answer": "TIMLEAD deployment is quick and can be completed in a few weeks depending on your organization's size. Our team supports you at every step: initial configuration, user training, and ongoing support. The platform is designed to be intuitive, allowing your teams to quickly get up to speed."
+        },
+        "security": {
+          "question": "How does TIMLEAD handle data security?",
+          "answer": "Data security is a priority for TIMLEAD. Our platform uses advanced encryption protocols, regular backups, and complies with the strictest security standards. All data is hosted on secure servers, and we ensure full compliance with current regulations, including GDPR."
+        },
+        "support": {
+          "question": "What types of support and assistance do you offer?",
+          "answer": "We offer several levels of support based on your needs: technical support via email and phone, complete documentation, personalized training, and for businesses, dedicated support with an account manager. Our team is available to help you optimize TIMLEAD usage and answer your questions."
+        }
+      }
+    },
+    "try": "Try",
+    "contact": "Contact",
+    "monthlyTitle": "Monthly Subscription Pricing",
+    "monthlyDescription": "Price per user per month, annual commitment",
+    "features": "Features",
+    "features_list": {
+      "ticketing": "Ticketing management",
+      "planning": "Task planning",
+      "chat": "Instant chat",
+      "projectManagement": "Project management",
+      "mapping": "Interactive mapping",
+      "geotracking": "Real-time geotracking",
+      "crm": "Integrated CRM"
+    },
+    "plans": {
+      "starter": {
+        "name": "Start",
+        "price": "€39.90",
+        "period": "/month"
+      },
+      "advanced": {
+        "name": "Advanced",
+        "price": "€44.90",
+        "period": "/month"
+      },
+      "professional": {
+        "name": "Premium",
+        "price": "€55",
+        "period": "/month"
+      },
+      "advancedNetwork": {
+        "name": "Advanced Network",
+        "price": "€59.90",
+        "period": "/month"
+      },
+      "premiumNetwork": {
+        "name": "Premium Network",
+        "price": "€65",
+        "period": "/month"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "price": "Contact us",
+        "period": ""
+      }
+    }
   }
 }
