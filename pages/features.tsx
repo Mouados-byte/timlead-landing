@@ -32,6 +32,11 @@ const FEATURES = [
     demoImage: '/demo/inventory.jpg'
   },
   {
+    imageUrl: '/grid-icons/asset-6.svg',
+    translationKey: 'chat',
+    demoImage: '/demo/chat.jpg'
+  },
+  {
     imageUrl: '/grid-icons/asset-7.svg',
     translationKey: 'mobile',
     demoImage: '/demo/mobile.jpg'
