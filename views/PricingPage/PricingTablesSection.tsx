@@ -34,7 +34,7 @@ export default function PricingTablesSection() {
               {PLANS.map((plan) => (
                 <th key={plan} className={plan === 'professional' ? 'highlighted' : ''}>
                   {t(`pricing.plans.${plan}.name`)}
-                  <Price>{t(`pricing.plans.${plan}.price`)}{t(`pricing.plans.${plan}.period`)}</Price>
+                  <Price>{t(`pricing.plans.${plan}.price`)}</Price>
                 </th>
               ))}
             </tr>
@@ -117,8 +117,8 @@ const TableWrapper = styled.div`
 
 const Table = styled.table`
   width: 100%;
-  border-collapse: collapse;
-  min-width: 90rem;
+  min-width: 1200px; /* Ensures minimum width for content */
+  table-layout: fixed; /* Gives columns equal width */
   background: rgb(var(--cardBackground));
 
   th, td {
@@ -158,7 +158,7 @@ const Table = styled.table`
 `;
 
 const Price = styled.div`
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: bold;
   margin-top: 1rem;
   white-space: nowrap;
