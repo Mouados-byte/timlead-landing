@@ -6,10 +6,18 @@ import { NavItems } from 'types'
 import ClientOnly from './ClientOnly'
 import CloseIcon from './CloseIcon'
 import OriginalDrawer from './Drawer'
+import { useTranslation } from 'next-i18next';
 
-type NavigationDrawerProps = PropsWithChildren<{ items: NavItems }>
+export default function NavigationDrawer({ children } : any) {
+  const { t } = useTranslation('common');
 
-export default function NavigationDrawer({ children, items }: NavigationDrawerProps) {
+  const items: NavItems = [
+    { title: t('navItems.home'), href: '/' },
+    { title: t('navItems.features'), href: '/features' },
+    { title: t('navItems.pricing'), href: '/pricing' },
+    { title: t('navItems.requestDemo'), href: '/contact' },
+    { title: t('navItems.login'), href: 'https://timlead.com', outlined: true },
+  ];
   return (
     <OriginalDrawer.Drawer>
       <Wrapper>
@@ -29,7 +37,7 @@ export default function NavigationDrawer({ children, items }: NavigationDrawerPr
   )
 }
 
-function NavItemsList({ items }: NavigationDrawerProps) {
+function NavItemsList({ items }: any) {
   const { close } = OriginalDrawer.useDrawer()
   const router = useRouter()
 
@@ -44,7 +52,7 @@ function NavItemsList({ items }: NavigationDrawerProps) {
 
   return (
     <ul>
-      {items.map((singleItem, idx) => {
+      {items.map((singleItem : any, idx: any) => {
         return (
           <NavItem key={idx}>
             <NextLink href={singleItem.href}>{singleItem.title}</NextLink>

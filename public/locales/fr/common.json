@@ -4,6 +4,9 @@
   "whyTimlead": "Pourquoi TIMLEAD ?",
   "completeSolution": "Une solution complète pour votre gestion opérationnelle",
   "mainDescription": "TIMLEAD centralise toutes les fonctionnalités essentielles pour la gestion des opérations : gestion de Ticketing, planification des tâches, CRM, inventaire des équipements, etc. Notre plateforme permet de simplifier la gestion et d'éviter la multiplication des outils.",
+  "features_interface": "Interface moderne et intuitive",
+  "features_tracking": "Suivi et monitoring en temps réel",
+  "features_solution": "Solution complète pour les opérations terrain",
   "features": {
     "mainTitle": "Fonctionnalités principales",
     "subtitle": "Pourquoi TIMLEAD est plus puissant qu'un outil standard ?",
@@ -36,10 +39,7 @@
         "title": "Chat en temps réel",
         "description": "Chat en temps réel avec les techniciens, partage de photos, documents et vidéos depuis le terrain."
       }
-    },
-    "interface": "Interface moderne et intuitive",
-    "tracking": "Suivi et monitoring en temps réel",
-    "solution": "Solution complète pour les opérations terrain"
+    }
   },
   "cta": {
     "ready": "Prêt à optimiser vos opérations ?",
@@ -216,5 +216,12 @@
         }
       }
     }
+  },
+  "navItems": {
+    "home": "Accueil",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "requestDemo": "Demander une démo",
+    "login": "Se connecter"
   }
 }

@@ -16,14 +16,8 @@ import NewsletterModal from 'components/NewsletterModal';
 import WaveCta from 'components/WaveCta';
 import { NavItems } from 'types';
 import { appWithTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
-const navItems: NavItems = [
-  { title: 'Accueil', href: '/' },
-  { title: 'Fonctionnalités', href: '/features' },
-  { title: 'Tarifs', href: '/pricing' },
-  { title: "Demander une demo", href: '/contact' },
-  { title: "Se connecter", href: 'https://timlead.com', outlined: true },
-];
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -69,7 +63,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyle />
 
       <Providers>
-        <Navbar items={navItems} />
+        <Navbar />
         <Component {...pageProps} />
         <WaveCta />
         <Footer />
@@ -80,7 +74,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 function Providers<T>({ children }: PropsWithChildren<T>) {
   return (
-    <NavigationDrawer items={navItems}>{children}</NavigationDrawer>
+    <NavigationDrawer>{children}</NavigationDrawer>
   );
 }
 

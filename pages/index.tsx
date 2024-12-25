@@ -41,9 +41,9 @@ export default function Homepage() {
           >
             <p>{t('mainDescription')}</p>
             <ul>
-              <li>{t('features.interface')}</li>
-              <li>{t('features.tracking')}</li>
-              <li>{t('features.solution')}</li>
+              <li>{t('features_interface')}</li>
+              <li>{t('features_tracking')}</li>
+              <li>{t('features_solution')}</li>
             </ul>
           </BasicSection>
         </WhiteBackgroundContainer>

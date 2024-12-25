@@ -4,6 +4,9 @@
   "whyTimlead": "Why TIMLEAD?",
   "completeSolution": "A complete solution for your operational management",
   "mainDescription": "TIMLEAD centralizes all essential features for operations management: Ticketing management, task planning, CRM, equipment inventory, etc. Our platform simplifies management and avoids tool multiplication.",
+  "features_interface": "Modern and intuitive interface",
+  "features_tracking": "Real-time tracking and monitoring",
+  "features_solution": "Complete solution for field operations",
   "features": {
     "mainTitle": "Main Features",
     "subtitle": "Why TIMLEAD is more powerful than a standard tool?",
@@ -35,10 +38,7 @@
       "chat": {
         "title": "Real-time Chat",
         "description": "Real-time chat with technicians, sharing photos, documents and videos from the field."
-      },
-      "interface": "Modern and intuitive interface",
-      "tracking": "Real-time tracking and monitoring",
-      "solution": "Complete solution for field operations"
+      }
     }
   },
   "cta": {
@@ -203,5 +203,12 @@
         "period": ""
       }
     }
+  },
+  "navItems": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "requestDemo": "Request a demo",
+    "login": "Log in"
   }
 }

@@ -13,6 +13,7 @@ import Drawer from "./Drawer";
 import { HamburgerIcon } from "./HamburgerIcon";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from 'next-i18next';
 
 const ColorSwitcher = dynamic(() => import("../components/ColorSwitcher"), { ssr: false });
 
@@ -20,7 +21,7 @@ type NavbarProps = { items: NavItems };
 type ScrollingDirections = "up" | "down" | "none";
 type NavbarContainerProps = { hidden: boolean; transparent: boolean };
 
-export default function Navbar({ items }: NavbarProps) {
+export default function Navbar() {
   const router = useRouter();
   const { toggle } = Drawer.useDrawer();
   const [scrollingDirection, setScrollingDirection] = useState<ScrollingDirections>("none");
@@ -61,6 +62,16 @@ export default function Navbar({ items }: NavbarProps) {
     setScrollingDirection(isScrollingUp ? "up" : "down");
     lastScrollY.current = currentScrollY;
   }
+
+  const { t } = useTranslation('common');
+
+  const items: NavItems = [
+    { title: t('navItems.home'), href: '/' },
+    { title: t('navItems.features'), href: '/features' },
+    { title: t('navItems.pricing'), href: '/pricing' },
+    { title: t('navItems.requestDemo'), href: '/contact' },
+    { title: t('navItems.login'), href: 'https://timlead.com', outlined: true },
+  ];
 
   const isNavbarHidden = scrollingDirection === "down";
   const isTransparent = scrollingDirection === "none";
