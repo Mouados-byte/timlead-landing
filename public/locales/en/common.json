@@ -28,8 +28,8 @@
         "description": "Optimize intervention rounds, maintenance and tracking of routes completed by your technicians."
       },
       "inventory": {
-        "title": "Inventory Management",
-        "description": "Monitor equipment occupancy rates and manage provisioning efficiently and centrally."
+        "title": "Asset & Resource Management",
+        "description": "Monitor equipment occupancy rates, inventory levels, and maintenance schedules while managing all resources efficiently through a centralized system."
       },
       "mobile": {
         "title": "Powerful Mobile App",

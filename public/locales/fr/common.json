@@ -28,8 +28,8 @@
         "description": "Optimisez les rondes d'intervention, la maintenance et le suivi des parcours réalisés par vos techniciens."
       },
       "inventory": {
-        "title": "Gestion d'inventaire",
-        "description": "Suivez les taux d'occupation des équipements et gérez le Provisionning de manière efficace et centralisée."
+        "title": "Gestion des Actifs et Ressources",
+        "description": "Surveillez les taux d'occupation des équipements, les niveaux d'inventaire et les calendriers de maintenance tout en gérant efficacement toutes les ressources via un système centralisé."
       },
       "mobile": {
         "title": "Application mobile performante",
