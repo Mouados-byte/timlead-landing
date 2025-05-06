@@ -204,6 +204,41 @@
       }
     }
   },
+  "subscribe": {
+    "title": "Subscribe to our plan",
+    "selectedPlan": "Selected plan",
+    "description": "Stay informed about TIMLEAD news, features and tips to optimize your operations.",
+    "email": "Your email",
+    "submit": "Subscribe",
+    "success": "Thank you for subscribing!",
+    "error": "An error occurred. Please try again.",
+    "user":{
+      "Information": "User Information",
+      "firstName": "Your first Name",
+      "lastName": "Your last Name",
+      "selectGender": "Select Gender",
+      "gender": "Gender",
+      "birthdate": "Your birthdate",
+      "male": "Male",
+      "female": "Female",
+      "email": "Your email",
+      "password": "Your password",
+      "confirmPassword": "Confirm your password",
+      "phone": "Your phone number",
+      "company": "Company name"
+    },
+    "client": {
+      "Information": "Company Information",
+      "name": "Name of your company",
+      "responsibleName": "Your responsible name",
+      "responsibleEmail": "Your email",
+      "phone": "Your phone number",
+      "address": "Your address",
+      "city": "Your city"
+    },
+    "cancel": "Cancel",
+    "subscribe": "Subscribe"
+  },
   "navItems": {
     "home": "Home",
     "features": "Features",

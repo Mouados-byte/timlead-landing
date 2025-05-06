@@ -2,6 +2,8 @@ import LocalizedLink from 'components/LocalizedLink';
 import { useTranslation } from 'next-i18next';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import SubscribeForm, { SubscribeFormData } from 'components/SubscribeForm';
 
 // Define types for the new API response format
 interface FeatureInfo {
@@ -26,9 +28,14 @@ type BackendModuleKey = 'tickets' | 'schedule' | 'conversation' | 'equipment' | 
 
 export default function PricingTablesSection() {
   const { t } = useTranslation('common');
+  const router = useRouter();
   const [plans, setPlans] = useState<PlanInfo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showSubscribeForm, setShowSubscribeForm] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<PlanInfo | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Frontend feature keys that will be displayed in the table
   const featureKeys: FrontendFeatureKey[] = [
@@ -58,14 +65,14 @@ export default function PricingTablesSection() {
       try {
         setLoading(true);
 
-          const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-          console.log("API URL:", apiUrl);
-          const response = await fetch(`${apiUrl}/api/v1/subscriptionslandingpage/plans`, {
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            }
-          });
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+        console.log("API URL:", apiUrl);
+        const response = await fetch(`${apiUrl}/api/v1/subscriptionslandingpage/plans`, {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        });
         
         if (!response.ok) {
           throw new Error('Failed to fetch pricing data');
@@ -107,7 +114,7 @@ export default function PricingTablesSection() {
     if (plans.length === 0) return null;
     
     // For now, let's highlight a plan in the middle (if there are at least 3 plans)
-    return plans.length >= 3 ? plans[Math.floor(plans.length / 2)].id : null;
+    return plans.length >= 1 ? plans[Math.floor(plans.length / 2)].id : null;
   };
 
   const highlightedPlanId = getHighlightedPlan();
@@ -115,6 +122,74 @@ export default function PricingTablesSection() {
   // Check if a plan should be highlighted
   const isPlanHighlighted = (planId: number): boolean => {
     return planId === highlightedPlanId;
+  };
+
+  // Handle clicking the "Try" button
+  const handleTryClick = (plan: PlanInfo) => {
+    setSelectedPlan(plan);
+    setShowSubscribeForm(true);
+  };
+
+  // Handle form submission
+  const handleSubscribeSubmit = async (formData: SubscribeFormData) => {
+    if (!selectedPlan) return;
+    
+    try {
+      setSubmitting(true);
+      setSubmitError(null);
+      
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      const response = await fetch(`${apiUrl}/api/v1/subscriptionslandingpage/subscribe`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          plan_id: selectedPlan.id,
+          user: {
+            first_name: formData.first_name,
+            last_name: formData.last_name,
+            gender: formData.gender || null,
+            birthdate: formData.birthdate || null,
+            email: formData.email,
+            password: formData.password,
+            password_confirmation: formData.password_confirmation
+          },
+          client: {
+            name: formData.client_name,
+            responsible_name: formData.responsible_name,
+            responsible_email: formData.responsible_email,
+            phone: formData.phone,
+            address: formData.address || null,
+            city: formData.city || null,
+            code_postal: formData.postal_code || null
+          }
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create subscription');
+      }
+      
+      // Redirect to login page or dashboard based on your app flow
+      router.push('/subscription-success');
+      
+    } catch (err: any) {
+      console.error('Subscription error:', err);
+      setSubmitError(err.message || 'Failed to process subscription');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  // Close the form
+  const handleCancelSubscribe = () => {
+    setShowSubscribeForm(false);
+    setSelectedPlan(null);
+    setSubmitError(null);
   };
 
   if (loading) return <div>Loading pricing information...</div>;
@@ -134,7 +209,7 @@ export default function PricingTablesSection() {
               {plans.map((plan) => (
                 <th key={plan.id} className={isPlanHighlighted(plan.id) ? 'highlighted' : ''}>
                   {plan.name}
-                  <Price>{plan.price}</Price>
+                  <Price>${plan.price}</Price>
                 </th>
               ))}
             </tr>
@@ -154,17 +229,54 @@ export default function PricingTablesSection() {
               <td></td>
               {plans.map((plan) => (
                 <td key={`action-${plan.id}`} className={isPlanHighlighted(plan.id) ? 'highlighted' : ''}>
-                  <LocalizedLink href="/contact">
-                    <ActionButton className={isPlanHighlighted(plan.id) ? 'highlighted' : ''}>
-                      {plan.price.includes('Contact') ? t("pricing.contact") : t("pricing.try")}
+                  {plan.price.includes('Contact') ? (
+                    <LocalizedLink href="/contact">
+                      <ActionButton className={isPlanHighlighted(plan.id) ? 'highlighted' : ''}>
+                        {t("pricing.contact")}
+                      </ActionButton>
+                    </LocalizedLink>
+                  ) : (
+                    <ActionButton 
+                      className={isPlanHighlighted(plan.id) ? 'highlighted' : ''}
+                      onClick={() => handleTryClick(plan)}
+                    >
+                      {t("pricing.try")}
                     </ActionButton>
-                  </LocalizedLink>
+                  )}
                 </td>
               ))}
             </tr>
           </tbody>
         </Table>
       </TableWrapper>
+
+      {showSubscribeForm && selectedPlan && (
+        <SubscribeForm 
+          planId={selectedPlan.id} 
+          planName={selectedPlan.name}
+          onSubmit={handleSubscribeSubmit}
+          onCancel={handleCancelSubscribe}
+        />
+      )}
+
+      {submitting && (
+        <LoadingOverlay>
+          <LoadingSpinner />
+          <LoadingText>{t('subscribe.processing')}</LoadingText>
+        </LoadingOverlay>
+      )}
+
+      {submitError && (
+        <ErrorOverlay>
+          <ErrorContainer>
+            <ErrorTitle>{t('subscribe.error')}</ErrorTitle>
+            <ErrorMessage>{submitError}</ErrorMessage>
+            <ErrorButton onClick={() => setSubmitError(null)}>
+              {t('subscribe.dismiss')}
+            </ErrorButton>
+          </ErrorContainer>
+        </ErrorOverlay>
+      )}
     </Wrapper>
   );
 }
@@ -268,5 +380,90 @@ const ActionButton = styled.button`
       background: rgb(var(--primary));
       opacity: 0.9;
     }
+  }
+`;
+
+// Additional styled components for loading and error states
+const LoadingOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+`;
+
+const LoadingSpinner = styled.div`
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 5px solid rgb(var(--primary));
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 2rem;
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+`;
+
+const LoadingText = styled.p`
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 500;
+`;
+
+const ErrorOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  padding: 2rem;
+`;
+
+const ErrorContainer = styled.div`
+  background-color: rgb(var(--cardBackground));
+  border-radius: 1rem;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+`;
+
+const ErrorTitle = styled.h3`
+  font-size: 2rem;
+  color: rgb(220, 53, 69);
+  margin-bottom: 1.5rem;
+`;
+
+const ErrorMessage = styled.p`
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+`;
+
+const ErrorButton = styled.button`
+  background-color: rgb(var(--primary));
+  color: rgb(var(--textSecondary));
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  
+  &:hover {
+    opacity: 0.9;
   }
 `;
