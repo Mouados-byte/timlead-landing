@@ -3,7 +3,7 @@ import { useTranslation } from 'next-i18next';
 import styled from 'styled-components';
 
 interface SubscribeFormProps {
-  planId: number;
+  templateId: number;
   planName: string;
   onSubmit: (formData: SubscribeFormData) => void;
   onCancel: () => void;
@@ -21,15 +21,9 @@ export interface SubscribeFormData {
   
   // Client information
   client_name: string;
-  responsible_name: string;
-  responsible_email: string;
-  phone: string;
-  address: string;
-  city: string;
-  postal_code: string;
 }
 
-export default function SubscribeForm({ planId, planName, onSubmit, onCancel }: SubscribeFormProps) {
+export default function SubscribeForm({ templateId, planName, onSubmit, onCancel }: SubscribeFormProps) {
   const { t } = useTranslation('common');
   
   const [formData, setFormData] = useState<SubscribeFormData>({
@@ -40,13 +34,7 @@ export default function SubscribeForm({ planId, planName, onSubmit, onCancel }: 
     email: '',
     password: '',
     password_confirmation: '',
-    client_name: '',
-    responsible_name: '',
-    responsible_email: '',
-    phone: '',
-    address: '',
-    city: '',
-    postal_code: ''
+    client_name: ''
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -72,9 +60,8 @@ export default function SubscribeForm({ planId, planName, onSubmit, onCancel }: 
     
     // Required fields
     const requiredFields = [
-      'first_name', 'last_name', 'email', 'password', 
-      'password_confirmation', 'client_name', 'responsible_name', 
-      'responsible_email', 'phone'
+      'first_name', 'last_name', 'gender', 'birthdate', 'email', 'password', 
+      'password_confirmation', 'client_name',
     ];
     
     requiredFields.forEach(field => {
@@ -101,7 +88,14 @@ export default function SubscribeForm({ planId, planName, onSubmit, onCancel }: 
     e.preventDefault();
     
     if (validate()) {
-      onSubmit(formData);
+      // Auto-fill responsible fields if they're empty
+      const dataToSubmit = {
+        ...formData,
+        responsible_name: `${formData.first_name} ${formData.last_name}`,
+        responsible_email: formData.email
+      };
+      
+      onSubmit(dataToSubmit);
     }
   };
 
@@ -156,6 +150,7 @@ export default function SubscribeForm({ planId, planName, onSubmit, onCancel }: 
                   <option value="male">{t('subscribe.user.male')}</option>
                   <option value="female">{t('subscribe.user.female')}</option>
                 </select>
+                {errors.gender && <ErrorText>{errors.gender}</ErrorText>}
               </FormGroup>
               
               <FormGroup>
@@ -167,6 +162,7 @@ export default function SubscribeForm({ planId, planName, onSubmit, onCancel }: 
                   value={formData.birthdate}
                   onChange={handleChange}
                 />
+                {errors.birthdate && <ErrorText>{errors.birthdate}</ErrorText>}
               </FormGroup>
             </FormRow>
             

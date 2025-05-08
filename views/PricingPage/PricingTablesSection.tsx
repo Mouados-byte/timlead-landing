@@ -139,14 +139,15 @@ export default function PricingTablesSection() {
       setSubmitError(null);
       
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-      const response = await fetch(`${apiUrl}/api/v1/subscriptionslandingpage/subscribe`, {
+      
+      const response = await fetch(`${apiUrl}/api/v1/subscriptionslandingpage/create_subscription`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          plan_id: selectedPlan.id,
+          template_module_controlle_id: selectedPlan.id,
           user: {
             first_name: formData.first_name,
             last_name: formData.last_name,
@@ -158,24 +159,27 @@ export default function PricingTablesSection() {
           },
           client: {
             name: formData.client_name,
-            responsible_name: formData.responsible_name,
-            responsible_email: formData.responsible_email,
-            phone: formData.phone,
-            address: formData.address || null,
-            city: formData.city || null,
-            code_postal: formData.postal_code || null
+            template_module_controlle_id: selectedPlan.id
           }
         })
       });
-      
-      const data = await response.json();
+  
+      console.log("Subscription response status:", response.status);
       
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to create subscription');
+        const errorData = await response.json();
+        throw new Error(errorData.error || errorData.errors?.join(', ') || 'Failed to create subscription');
       }
       
-      // Redirect to login page or dashboard based on your app flow
-      router.push('/subscription-success');
+      const data = await response.json();
+      console.log("Subscription success:", data);
+      
+      // Redirect to Stripe Checkout URL
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error('No redirect URL provided');
+      }
       
     } catch (err: any) {
       console.error('Subscription error:', err);
@@ -252,7 +256,7 @@ export default function PricingTablesSection() {
 
       {showSubscribeForm && selectedPlan && (
         <SubscribeForm 
-          planId={selectedPlan.id} 
+          templateId={selectedPlan.id} 
           planName={selectedPlan.name}
           onSubmit={handleSubscribeSubmit}
           onCancel={handleCancelSubscribe}
