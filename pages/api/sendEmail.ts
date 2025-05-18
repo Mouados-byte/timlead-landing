@@ -13,7 +13,7 @@ export default async function SendEmail(req: NextApiRequest, res: NextApiRespons
 
   const content = {
     to: 'support@timlead.com',
-    from: 'support@timlead.com',
+    from: 'imam.mouad@timlead.com',
     subject: subject,
     text: description,
     html: `
