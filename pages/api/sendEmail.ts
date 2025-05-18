@@ -12,16 +12,16 @@ export default async function SendEmail(req: NextApiRequest, res: NextApiRespons
   const referer = req.headers.referer;
 
   const content = {
-    to: 'imam.mouad@timlead.com',
-    from: 'imam.mouad@timlead.com',
+    to: 'support@timlead.com',
+    from: 'support@timlead.com',
     subject: subject,
     text: description,
     html: `
-      <div>
-        <h1>Name: ${name}</h1>
-        <h1>E-mail: ${email}</h1>
-        <p>${description}</p>
-        <p>Sent from: ${referer || 'Not specified or hidden'}</p>
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 5px; background-color: #ffffff;">
+        <h1 style="color: #333333; font-size: 24px; margin-bottom: 15px; border-bottom: 1px solid #eaeaea; padding-bottom: 10px;">E-mail: ${email}</h1>
+        <h1 style="color: #333333; font-size: 24px; margin-bottom: 15px;">Name: ${name}</h1>
+        <p style="color: #555555; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">${description}</p>
+        <p style="color: #999999; font-size: 14px; font-style: italic; margin-top: 30px; padding-top: 10px; border-top: 1px solid #eaeaea;">Sent from: ${referer || 'Not specified or hidden'}</p>
       </div>
     `
   };
@@ -34,9 +34,9 @@ export default async function SendEmail(req: NextApiRequest, res: NextApiRespons
     if (error.response) {
       console.error(error.response.body);
     }
-    return res.status(500).json({ 
+    return res.status(500).json({
       message: 'Error sending email',
-      error: error.message 
+      error: error.message
     });
   }
 }
