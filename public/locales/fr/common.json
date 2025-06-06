@@ -217,6 +217,41 @@
       }
     }
   },
+  "subscribe": {
+    "title": "Souscrivez à notre offre",
+    "selectedPlan": "Offre sélectionnée",
+    "description": "Restez informé des actualités, des fonctionnalités et des conseils de TIMLEAD pour optimiser vos opérations.",
+    "email": "Votre email",
+    "submit": "S'abonner",
+    "success": "Merci pour votre abonnement !",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "user": {
+      "Information": "Informations utilisateur",
+      "firstName": "Votre prénom",
+      "lastName": "Votre nom de famille",
+      "selectGender": "Sélectionnez le genre",
+      "gender": "Genre",
+      "birthdate": "Votre date de naissance",
+      "male": "Homme",
+      "female": "Femme",
+      "email": "Votre email",
+      "password": "Votre mot de passe",
+      "confirmPassword": "Confirmez votre mot de passe",
+      "phone": "Votre numéro de téléphone",
+      "company": "Nom de l'entreprise"
+    },
+    "client": {
+      "Information": "Informations sur l'entreprise",
+      "name": "Nom de l'entreprise",
+      "responsibleName": "Nom du responsable",
+      "responsibleEmail": "Votre email",
+      "phone": "Votre numéro de téléphone",
+      "address": "Votre adresse",
+      "city": "Votre ville"
+    },
+    "cancel": "Annuler",
+    "subscribe": "S'abonner"
+  }, 
   "navItems": {
     "home": "Accueil",
     "features": "Fonctionnalités",
